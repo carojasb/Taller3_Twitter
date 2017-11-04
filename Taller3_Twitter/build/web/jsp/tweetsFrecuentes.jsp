@@ -25,8 +25,8 @@
         <%  Mongo mg = new Mongo("localhost",27017);
             int cnt=0, c=0;
             String p;
-            DB db = mg.getDB("basetwitter");
-            DBCollection collection = db.getCollection("tweet");
+            DB db = mg.getDB("Grupo05_Twitter");
+            DBCollection collection = db.getCollection("grupo05_tweet");
             BasicDBObject doc = new BasicDBObject();
             DBCursor cursor = collection.find().limit(Integer.parseInt(cantidad));
             
