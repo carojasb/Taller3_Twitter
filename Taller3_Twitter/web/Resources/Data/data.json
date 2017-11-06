@@ -1,0 +1,68 @@
+{
+   "Tweet": [
+     {
+        "id" : "927307035766489088",
+        "name" : "Noticias Caracol",
+        "count" : "NoticiasCaracol",
+        "text" : "#ShowCaracol Nacho manda fuertes comentarios en redes sociales contra Chyno https://t.co/66vUnJmOPa https://t.co/5cFLw8XcB5",
+        "retweet" : "false",
+        "countSeguidores" : "7765477",
+        "countFavoritos" : "4",
+        "location" : "Colombia",
+        "defaultImage" : "false",
+        "createdDate" : "19-05-2008",
+        "FechaRegDatos" : "05-11-2017 18:00:56",
+        "hashtag" : "ShowCaracol",
+        "mention" : "SIN_MENTION"
+        },
+        
+        {
+        "id" : "927307035766489088",
+        "name" : "Noticias Caracol",
+        "count" : "NoticiasCaracol",
+        "text" : "#ShowCaracol Nacho manda fuertes comentarios en redes sociales contra Chyno https://t.co/66vUnJmOPa https://t.co/5cFLw8XcB5",
+        "retweet" : "false",
+        "countSeguidores" : "100000000",
+        "countFavoritos" : "4",
+        "location" : "Colombia",
+        "defaultImage" : "false",
+        "createdDate" : "19-05-2009",
+        "FechaRegDatos" : "05-11-2017 19:00:56",
+        "hashtag" : "ShowCaracol",
+        "mention" : "SIN_MENTION"
+        },
+        
+        {
+        "id" : "927307035766489088",
+        "name" : "Noticias Caracol",
+        "count" : "NoticiasCaracol",
+        "text" : "#ShowCaracol Nacho manda fuertes comentarios en redes sociales contra Chyno https://t.co/66vUnJmOPa https://t.co/5cFLw8XcB5",
+        "retweet" : "false",
+        "countSeguidores" : "897986433",
+        "countFavoritos" : "4",
+        "location" : "Colombia",
+        "defaultImage" : "false",
+        "createdDate" : "19-05-2009",
+        "FechaRegDatos" : "06-11-2017 19:00:56",
+        "hashtag" : "ShowCaracol",
+        "mention" : "SIN_MENTION"
+        },
+        
+        {
+        "id" : "927307035766489088",
+        "name" : "Noticias Caracol",
+        "count" : "NoticiasCaracol",
+        "text" : "#ShowCaracol Nacho manda fuertes comentarios en redes sociales contra Chyno https://t.co/66vUnJmOPa https://t.co/5cFLw8XcB5",
+        "retweet" : "false",
+        "countSeguidores" : "9000000",
+        "countFavoritos" : "4",
+        "location" : "Colombia",
+        "defaultImage" : "false",
+        "createdDate" : "19-05-2009",
+        "FechaRegDatos" : "07-11-2017 20:00:56",
+        "hashtag" : "ShowCaracol",
+        "mention" : "SIN_MENTION"
+        }
+        
+   ]
+}

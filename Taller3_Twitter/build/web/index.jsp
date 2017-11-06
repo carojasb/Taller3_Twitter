@@ -10,7 +10,7 @@
     <head> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="Resources/css/screen.css" rel="stylesheet" type="text/css"/>
-        <title>Inicio WikiFouber</title>
+        <title>Twitter Analisis Coyuntural Elecciones</title>
     </head>
     <body style="background-color: darkslategray"><BR><BR><BR>
         <form name="form_index" action="Taller2/../jsp/principal.jsp">                        
@@ -19,6 +19,11 @@
             <h2 style="color: black" align="center">Pablo Andres Boada</h2><BR><BR>
             <p class="BtnIniciar" align="center">
                 <input type="submit" value="Iniciar" name="btn_iniciar" align="center"/>
+            </p>
+        </form>
+        <form name="form_index" action="Taller2/../jsp/HistoricoSeguidores.jsp">                        
+            <p class="BtnHistorico" align="center">
+                <input type="submit" value="Historico Seguidores" name="btn_hist_seguidores" align="center"/>
             </p>
         </form>
     </body>
