@@ -82,7 +82,7 @@
 
             <div class="legend" align="center">
                 Los hashtags más frecuentes son más grandes y ligeramente descoloridas. Los hashtags menos frecuentes son más pequeñas y oscuras.
-            </div>
+            </div> 
         
         
         <br><br>
