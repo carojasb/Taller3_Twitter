@@ -32,10 +32,19 @@
             <!--<img src="../Resources/images/Petro.jpg" border="0" width="80" height="120">
             <img src="../Resources/images/VargasLleras.jpg" border="0" width="80" height="120">-->
              <select name="Candidato_Elegido" id="candidatos">
-                <option value="German_Vargas">German_Vargas</option> 
+                <option value="German_Vargas">German Vargas Lleras</option> 
                 <option value="IvanDuque">IvanDuque</option> 
-                <option value="petrogustavo">petrogustavo</option> 
-                <option value="elespectador">elespectador</option> 
+                <option value="mluciaramirez">Marta Lucía Ramírez</option> 
+                <option value="sergio_fajardo">Sergio Fajardo</option>                 
+                <option value="DeLaCalleHum">Humberto de la Calle</option> 
+                <option value="petrogustavo">Gustavo Petro</option> 
+                <option value="CristoBustos">Juan Fernando Cristo</option> 
+                <option value="MoralesViviane">Viviane Morales</option>
+                <option value="PinzonBueno">Pinzón Bueno</option>
+                 <option value="RafaelPardo">Rafael Pardo</option> 
+                <option value="ClaudiaLopez">Claudia López</option> 
+                <option value="AlvaroUribeVel">Álvaro Uribe Vélez</option>
+                <option value="IvanCepedaCast">Iván Cepeda Castro</option> 
             </select>
                 <p class="BtnSeguidores">
                     <input type="submit"/>
