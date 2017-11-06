@@ -30,8 +30,16 @@
             BasicDBObject doc = new BasicDBObject();
             DBCursor cursor = collection.find().limit(Integer.parseInt(cantidad));
             
+            //Agrupar por hashtag
+            DBObject groupFields = new BasicDBObject( "_id", "$hashtag");            
+            groupFields.put("count", new BasicDBObject( "$sum", 1));
+            DBObject group = new BasicDBObject("$group", groupFields );            
+            DBObject sortFields = new BasicDBObject("count", -1);
+            DBObject sort = new BasicDBObject("$sort", sortFields );
             
+            AggregationOutput output = collection.aggregate(group, sort);
             
+                        
             doc = new BasicDBObject();
             try {
 	
@@ -39,7 +47,7 @@
                 {
                       DBObject str = cursor.next();
                       
-                      %><h2>Hashtag <%= cnt+1 %><%= " = " + str.get("text") + "\n" %> </h2><BR><%
+                      %><h2>Hashtag <%= cnt+1 %><%= " = " + str.get("hashtag") + "\n" %> </h2><BR><%
                       cnt++;
                 }
             }finally 

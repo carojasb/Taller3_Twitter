@@ -29,21 +29,40 @@
             }
         </script>
     </head>
-    <body style="background-color: darkslategray"><BR><BR><BR>
-        <form name="form_index" action="tweetsFrecuentes.jsp" onsubmit="return validarCantidad()">
-            
-            <h1 style="color: black" align="center">Tweet Sentiment Analysis</h1><BR><BR><BR>            
-            
+    <body style="background-color: darkslategray">
+        
+        <BR><BR><BR>
+        
+        <h1 style="color: black" align="center">Tweet Sentiment Analysis</h1><BR><BR><BR>            
+        
+        <form name="form_index" action="tweetsFrecuentes.jsp" onsubmit="return validarCantidad()" align="center">
+            <fieldset style="background-color:darkgrey;"><br>
                 <p class="BtntweetsFrecuentes" align="center">
                     <label style="color: black; font-size:18px"> Buscar los </label>
                     <input id="cantidad" type="text" name="hashtags" placeholder="Ej: 0" size="1" onChange="validarSiNumero(this.value);"/>
                     <label style="color: black; font-size:18px"> hashtags más frecuentes </label><BR><BR>
                     <input type="submit" value="Buscar" name="btn_tweetsFrecuentes" align="center"/>
-                </p><BR><BR>
-               
-            <p class="linkVolver" align="center">
-                <a href="../index.jsp" style="font-size: 15pt; font-family: Comic Sans MS; color: white; align-items: center" align="center">Inicio</a>
-            </p>
+                </p>
+                </fieldset>
         </form>
+              
+        
+        <BR><BR>
+        
+        <form name="form_index" action="HistoricoSeguidores.jsp">                        
+            <fieldset style="background-color:darkgrey;"><br>
+                <p class="BtnHistorico" align="center">
+                     <input type="submit" name="Consultar_Seguidores" value="Consultar_Seguidores" align="center" />
+                     <input type ="text" name="Candidato_Elegido" value="German_Vargas" hidden="true"/>
+                </p>
+            </fieldset>
+        </form>
+        
+        <BR><BR><BR>
+        
+        <p class="linkVolver" align="center">
+            <a href="../index.jsp" style="font-size: 15pt; font-family: Comic Sans MS; color: white; align-items: center" align="center">Inicio</a>
+        </p>
+        
     </body>
 </html>

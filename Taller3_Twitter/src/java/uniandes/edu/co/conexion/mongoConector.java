@@ -7,6 +7,8 @@ package uniandes.edu.co.conexion;
 
 import com.mongodb.*;
 import java.net.UnknownHostException;
+import com.sun.org.apache.bcel.internal.generic.NEW; 
+
 
 /**
  *
@@ -35,5 +37,5 @@ public class mongoConector {
     
     public DBCollection getCollection(String name){
         return this.database.getCollection(name);
-    }
+    }         
 }
