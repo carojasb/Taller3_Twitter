@@ -35,7 +35,7 @@
         
         <h1 style="color: black" align="center">Tweet Sentiment Analysis</h1><BR><BR><BR>            
         
-        <form name="form_index" action="tweetsFrecuentes.jsp" onsubmit="return validarCantidad()" align="center">
+        <form name="form_frecuentes" action="tweetsFrecuentes.jsp" onsubmit="return validarCantidad()" align="center">
             <fieldset style="background-color:darkgrey;"><br>
                 <p class="BtntweetsFrecuentes" align="center">
                     <label style="color: black; font-size:18px"> Buscar los </label>
@@ -49,7 +49,7 @@
         
         <BR><BR>
         
-        <form name="form_index" action="HistoricoSeguidores.jsp">                        
+        <form name="form_seguidores" action="HistoricoSeguidores.jsp">                        
             <fieldset style="background-color:darkgrey;"><br>
                 <p class="BtnHistorico" align="center">
                      <input type="submit" name="Consultar_Seguidores" value="Consultar_Seguidores" align="center" />

@@ -4,6 +4,7 @@
     Author     : Kmilo
 --%>
 
+
 <%@page contentType="text/html" pageEncoding="UTF-8"
         import="com.mongodb.*"
         import="java.net.UnknownHostException"
@@ -37,29 +38,23 @@
             DBObject sortFields = new BasicDBObject("count", -1);
             DBObject sort = new BasicDBObject("$sort", sortFields );
             
-            AggregationOutput output = collection.aggregate(group, sort);
+            AggregationOutput output = collection.aggregate(group, sort);            
             
+            for (DBObject obj : output.results()) {
+                
+                if (!obj.get("_id").toString().contains("SIN_HASHTAG")){   
+                    
+                    if (cnt < Integer.parseInt(cantidad)){
                         
-            doc = new BasicDBObject();
-            try {
-	
-                while(cursor.hasNext()) 
-                {
-                      DBObject str = cursor.next();
-                      
-                      %><h2>Hashtag <%= cnt+1 %><%= " = " + str.get("hashtag") + "\n" %> </h2><BR><%
-                      cnt++;
-                }
-            }finally 
-                    {
-                    if(c==cnt)
-                    {
-                           %><center> No se encontró nada<br><br><strong><a href="javascript:history.go(-1)">Try Again</a></strong></center> <% 
+                        String hashtag = obj.get("_id").toString();
+                        int times = Integer.parseInt(obj.get("count").toString());
+
+                        %><h2>Hashtag <%= cnt+1 %><%= " = #" + hashtag +" aparece "+ times + " veces" + "\n" %> </h2><BR><%    
+                        cnt++;
+                        
                     }
-                       cursor.close();
-                    }            
-        
-            mg.close();
+                }
+            }
         %>
     
         <br>
