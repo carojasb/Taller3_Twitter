@@ -22,8 +22,9 @@
             </p>
         </form>
         <form name="form_index" action="Taller2/../jsp/HistoricoSeguidores.jsp">                        
-            <p class="BtnHistorico" align="center">
-                <input type="submit" value="Historico Seguidores" name="btn_hist_seguidores" align="center"/>
+            <p class="BtnHistorico" align="center" title="Consultar Seguidores">
+                 <input type="submit" name="Consultar_Seguidores" value="Consultar_Seguidores" align="center" />
+                 <input type ="text" name="Candidato_Elegido" value="German_Vargas" hidden="true"/>
             </p>
         </form>
     </body>

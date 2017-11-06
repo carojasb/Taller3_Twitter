@@ -1,11 +1,12 @@
 /* global d3 */
 
-function LineChartSeguidores(){
+function LineChartSeguidores(documento_json, country){
     
+       
   // set the dimensions and margins of the graph
-var margin = {top: 20, right: 20, bottom: 30, left: 50},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+var margin = {top: 20, right: 70, bottom: 30, left: 70},
+    width = 1200 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
 // set the ranges
 var x = d3.scaleTime().range([0, width]);
 var y = d3.scaleLinear().range([height, 0]);
@@ -23,8 +24,10 @@ var svg = d3.select("body").selectAll(".Line_chart").append("svg")
           
 var parseTime = d3.timeParse("%d-%m-%Y %H:%M:%S");
 
-function draw(data, country) {  
-  var data = data[country];  
+function draw(documento_json, country) {  
+    
+}
+  var data = documento_json[country];  
   // format the data
   data.forEach(function(d) {     
       d.Date = parseTime(d.FechaRegDatos);
@@ -38,7 +41,8 @@ function draw(data, country) {
  
   // Scale the range of the data
   x.domain(d3.extent(data, function(d) { return d.Date; }));
-  y.domain([0, d3.max(data, function(d) { return Math.max(d.Seguidores); })]);
+  y.domain([d3.min(data, function(d) { return (d.Seguidores); }), 
+            d3.max(data, function(d) { return (d.Seguidores); })]);
   
   // Add the valueline path.
   svg.append("path")
@@ -54,11 +58,8 @@ function draw(data, country) {
   svg.append("g")
       .call(d3.axisLeft(y));
   }
-  
-  // Get the data
-d3.json("../Resources/Data/data.json", function(error, data) {
-  if (error) throw error;
-  draw(data, "Tweet");
-});
 
-}
+function consultar_seguidores(){
+    var cuenta_seleccionada = document.getElementById('candidatos');
+    console.log(cuenta_seleccionada.value);
+  }

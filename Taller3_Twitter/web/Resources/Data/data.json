@@ -1,6 +1,6 @@
 {
    "Tweet": [
-     {
+        {
         "id" : "927307035766489088",
         "name" : "Noticias Caracol",
         "count" : "NoticiasCaracol",
@@ -11,7 +11,7 @@
         "location" : "Colombia",
         "defaultImage" : "false",
         "createdDate" : "19-05-2008",
-        "FechaRegDatos" : "05-11-2017 18:00:56",
+        "FechaRegDatos" : "05-11-2017 18:00:00",
         "hashtag" : "ShowCaracol",
         "mention" : "SIN_MENTION"
         },
@@ -22,12 +22,12 @@
         "count" : "NoticiasCaracol",
         "text" : "#ShowCaracol Nacho manda fuertes comentarios en redes sociales contra Chyno https://t.co/66vUnJmOPa https://t.co/5cFLw8XcB5",
         "retweet" : "false",
-        "countSeguidores" : "100000000",
+        "countSeguidores" : "7765479",
         "countFavoritos" : "4",
         "location" : "Colombia",
         "defaultImage" : "false",
         "createdDate" : "19-05-2009",
-        "FechaRegDatos" : "05-11-2017 19:00:56",
+        "FechaRegDatos" : "05-11-2017 19:00:00",
         "hashtag" : "ShowCaracol",
         "mention" : "SIN_MENTION"
         },
@@ -38,12 +38,12 @@
         "count" : "NoticiasCaracol",
         "text" : "#ShowCaracol Nacho manda fuertes comentarios en redes sociales contra Chyno https://t.co/66vUnJmOPa https://t.co/5cFLw8XcB5",
         "retweet" : "false",
-        "countSeguidores" : "897986433",
+        "countSeguidores" : "7775477",
         "countFavoritos" : "4",
         "location" : "Colombia",
         "defaultImage" : "false",
         "createdDate" : "19-05-2009",
-        "FechaRegDatos" : "06-11-2017 19:00:56",
+        "FechaRegDatos" : "05-11-2017 20:00:00",
         "hashtag" : "ShowCaracol",
         "mention" : "SIN_MENTION"
         },
@@ -54,15 +54,14 @@
         "count" : "NoticiasCaracol",
         "text" : "#ShowCaracol Nacho manda fuertes comentarios en redes sociales contra Chyno https://t.co/66vUnJmOPa https://t.co/5cFLw8XcB5",
         "retweet" : "false",
-        "countSeguidores" : "9000000",
+        "countSeguidores" : "7775490",
         "countFavoritos" : "4",
         "location" : "Colombia",
         "defaultImage" : "false",
         "createdDate" : "19-05-2009",
-        "FechaRegDatos" : "07-11-2017 20:00:56",
+        "FechaRegDatos" : "05-11-2017 21:00:00",
         "hashtag" : "ShowCaracol",
         "mention" : "SIN_MENTION"
         }
         
-   ]
-}
+   ]}
