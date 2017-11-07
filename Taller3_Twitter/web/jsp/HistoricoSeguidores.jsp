@@ -26,8 +26,8 @@
         <script src="../js/LineChartSeguidores.js"></script>
      </head>
     
-    <body>
-        <h1>Numero de Seguidores para una cuenta en el tiempo</h1><br><br>
+    <body style="background-color: darkslategray"><BR><BR><BR> 
+        <h1 style="color: black" align="center">Numero de Seguidores para una cuenta en el tiempo</h1><br><br>
         <p>
             La siguiente grafica nos permite ver el cambio del numero de seguidores de una cuenta especifica en diferentes instantes de tiempo. El eje X indica la fecha (dia, mes, año,
             hora, minuto, segundo) en la cual fue tomada la muestra de los datos y el eje y muestra el numero seguidores de esta cuenta.
@@ -82,9 +82,15 @@
             </script>                
         </div>  
         
-         <h1>Retweets por cuenta</h1><br><br>
+        <h1>Retweets por cuenta</h1><br><br>
         <p>
             
-        </p>      
+        </p>
+        <br><br>
+        <p class="linkVolver" align="center">                
+            <a href="../index.jsp" style="font-size: 15pt; font-family: Comic Sans MS; color: white; align-items: center"> Inicio </a>
+            <br>
+            <a href="principal.jsp" style="font-size: 15pt; font-family: Comic Sans MS; color: white; align-items: center"> Volver </a>
+        </p>
     </body>
 </html>

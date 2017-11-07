@@ -37,6 +37,11 @@
                 cnt++;
             }
         %>    
-        
+        <br><br>
+        <p class="linkVolver" align="center">                
+            <a href="../index.jsp" style="font-size: 15pt; font-family: Comic Sans MS; color: white; align-items: center"> Inicio </a>
+            <br>
+            <a href="principal.jsp" style="font-size: 15pt; font-family: Comic Sans MS; color: white; align-items: center"> Volver </a>
+        </p>
     </body>
 </html>
