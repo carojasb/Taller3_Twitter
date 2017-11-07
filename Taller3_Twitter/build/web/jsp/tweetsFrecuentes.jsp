@@ -31,7 +31,7 @@
         <h1 style="color: black" align="center">Listado de los <%= cantidad %> hashtag más frecuentes </h1><BR><BR>
         
         <%  Mongo mg = new Mongo("localhost",27017);
-            int cnt=0, c=0;
+            int cnt=0;
             String p;
             DB db = mg.getDB("Grupo05");
             DBCollection collection = db.getCollection("grupo05_tweet");
@@ -50,6 +50,7 @@
             String hashtag = null;
             int times = 0;
             String vari = "";
+            String opcion = "";
             
             for (DBObject obj : output.results()) {
                 
@@ -60,35 +61,55 @@
                         hashtag = obj.get("_id").toString();
                         times = Integer.parseInt(obj.get("count").toString());
 
-                        %><h2>Hashtag <%= cnt+1 %><%= " = #" + hashtag +" aparece "+ times + " veces" + "\n" %> </h2><BR><%
+                        %><h2 align="center">Hashtag <%= cnt+1 %><%= " = #" + hashtag +" aparece "+ times + " veces" + "\n" %> </h2><BR><%
                         cnt++;                        
                         
                         if (cnt < Integer.parseInt(cantidad)){
-                            vari = vari + "{\"text\":\"#"+hashtag+"\",\"size\":"+times/10+"},";
+                            vari = vari + "{\"text\":\"#"+hashtag+"\",\"size\":"+times+"},";
+                            opcion = opcion + "<option value=\""+hashtag+"\">"+"#"+hashtag+"<//option>";
+                            
                         }else if (cnt == Integer.parseInt(cantidad)){
-                            vari = vari + "{\"text\":\"#"+hashtag+"\",\"size\":"+times/10+"}";
+                            vari = vari + "{\"text\":\"#"+hashtag+"\",\"size\":"+times/7+"}";
+                            opcion = opcion + "<option value=\""+hashtag+"\">"+"#"+hashtag+"<//option>";
                         }
                     }
                 }
             }
         %>
         
+        <BR><BR>
         
+        <div class="opciones_hashtag" align="center">
+            <form name="Form_consultTweets" action="polaridadTweetsFrecuentes.jsp">
+                <label style="color: black; font-size:18px">Consultar la polaridad en los tweets del hashtag </label>
+                <select name="Hashtag_Elegido" id="Hashtag_Elegido">
+                    <%=opcion%>
+                </select>
+                <BR><BR>
+                <p class="BtnHashtagTweets">
+                    <input type="submit" value="Buscar"/>
+                </p><BR>
+
+            </form>
+        </div>
         
+        <div align="center">
             <script>
                 var frequency_list = [<%=vari%>];
                 DrawWordCloud(frequency_list);
             </script>        
+        </div>
 
-            <div class="legend" align="center">
-                Los hashtags más frecuentes son más grandes y ligeramente descoloridas. Los hashtags menos frecuentes son más pequeñas y oscuras.
-            </div> 
+        <div class="legend" align="center">
+            Entre más frecuente el hashtag, más grandes se encuentra en el tagCloud.
+        </div> 
         
         
         <br><br>
         <p class="linkVolver" align="center">                
-        <a href="../index.jsp" style="font-size: 15pt; font-family: Comic Sans MS; color: white; align-items: center"> Inicio </a>
-        <br>
-        <a href="principal.jsp" style="font-size: 15pt; font-family: Comic Sans MS; color: white; align-items: center"> Volver </a>
+            <a href="../index.jsp" style="font-size: 15pt; font-family: Comic Sans MS; color: white; align-items: center"> Inicio </a>
+            <br>
+            <a href="principal.jsp" style="font-size: 15pt; font-family: Comic Sans MS; color: white; align-items: center"> Volver </a>
+        </p>
     </body>
 </html>

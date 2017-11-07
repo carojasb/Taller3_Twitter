@@ -26,8 +26,11 @@
         <script src="../js/LineChartSeguidores.js"></script>
      </head>
     
-    <body>
-        <div class="Line_chart">
+    <body style="background-color: darkslategray"><BR><BR><BR>        
+        
+        <h1 style="color: black" align="center">Consulta de seguidores en el tiempo</h1><BR><BR>
+        
+        <div class="Line_chart" align="center">
           <form name="Form_Button" action="HistoricoSeguidores.jsp" onsubmit="return consultar_seguidores()">     
             <!--<img src="../Resources/images/Petro.jpg" border="0" width="80" height="120">
             <img src="../Resources/images/VargasLleras.jpg" border="0" width="80" height="120">-->
@@ -46,9 +49,10 @@
                 <option value="AlvaroUribeVel">Álvaro Uribe Vélez</option>
                 <option value="IvanCepedaCast">Iván Cepeda Castro</option> 
             </select>
-                <p class="BtnSeguidores">
-                    <input type="submit"/>
-                </p><BR><BR>
+            <BR><BR>
+            <p class="BtnSeguidores">
+                <input type="submit"/>
+            </p><BR>
           </form>
           
             <%
@@ -76,5 +80,13 @@
                 LineChartSeguidores(documento_json,country);
             </script>                
         </div>  
+                
+        <br><br>
+        
+        <p class="linkVolver" align="center">                
+            <a href="../index.jsp" style="font-size: 15pt; font-family: Comic Sans MS; color: white; align-items: center"> Inicio </a>
+            <br>
+            <a href="principal.jsp" style="font-size: 15pt; font-family: Comic Sans MS; color: white; align-items: center"> Volver </a>
+        </p>
     </body>
 </html>
