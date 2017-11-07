@@ -5,11 +5,11 @@
 
 * { margin: 0; padding: 0; }
 body { font: .74em Tahoma, Verdana, Sans-Serif, Arial; background: url(../images/body.gif) repeat; color: black; }
-h1 { font: normal 5.4em "Trebuchet MS", Helvetica, Arial; color: black; }
+h1 { font: normal 3.4em "Trebuchet MS", Helvetica, Arial; color: black; }
 h2 { font: normal 1.8em "Trebuchet MS", Helvetica, Arial; color: black; margin: 0 0 15px; }
 h3 { font: normal 1.4em "Trebuchet MS", Helvetica, Arial; color: black; margin: 0 0 20px; }
 h4 { font: normal 1.2em "Trebuchet MS", Helvetica, Arial; color: #dfdfdf; margin: 0 0 4px; }
-p { margin: 0 0 15px; line-height: 1.6em; }
+p { margin: 0 0 15px; line-height: 1.6em;  font: normal 1.4em "Trebuchet MS"}
 a { outline: 0; color: black; text-decoration: none; }
 li { list-style: none; }
 li a, img { display: block; }

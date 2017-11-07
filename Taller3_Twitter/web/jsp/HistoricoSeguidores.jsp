@@ -26,14 +26,15 @@
         <script src="../js/LineChartSeguidores.js"></script>
      </head>
     
-    <body style="background-color: darkslategray"><BR><BR><BR>        
-        
-        <h1 style="color: black" align="center">Consulta de seguidores en el tiempo</h1><BR><BR>
-        
-        <div class="Line_chart" align="center">
+    <body>
+        <h1>Numero de Seguidores para una cuenta en el tiempo</h1><br><br>
+        <p>
+            La siguiente grafica nos permite ver el cambio del numero de seguidores de una cuenta especifica en diferentes instantes de tiempo. El eje X indica la fecha (dia, mes, año,
+            hora, minuto, segundo) en la cual fue tomada la muestra de los datos y el eje y muestra el numero seguidores de esta cuenta.
+        </p>
+        <br>
+        <div class="Line_chart">
           <form name="Form_Button" action="HistoricoSeguidores.jsp" onsubmit="return consultar_seguidores()">     
-            <!--<img src="../Resources/images/Petro.jpg" border="0" width="80" height="120">
-            <img src="../Resources/images/VargasLleras.jpg" border="0" width="80" height="120">-->
              <select name="Candidato_Elegido" id="candidatos">
                 <option value="German_Vargas">German Vargas Lleras</option> 
                 <option value="IvanDuque">IvanDuque</option> 
@@ -48,11 +49,11 @@
                 <option value="ClaudiaLopez">Claudia López</option> 
                 <option value="AlvaroUribeVel">Álvaro Uribe Vélez</option>
                 <option value="IvanCepedaCast">Iván Cepeda Castro</option> 
-            </select>
-            <BR><BR>
-            <p class="BtnSeguidores">
-                <input type="submit"/>
-            </p><BR>
+                <option value="elespectador">El Espectador</option>
+                <option value="ELTIEMPO">El Tiempo</option>
+                <p class="BtnSeguidores">
+                    <input type="submit" value="Consultar"/>
+                </p><BR><BR>
           </form>
           
             <%
@@ -80,13 +81,10 @@
                 LineChartSeguidores(documento_json,country);
             </script>                
         </div>  
-                
-        <br><br>
         
-        <p class="linkVolver" align="center">                
-            <a href="../index.jsp" style="font-size: 15pt; font-family: Comic Sans MS; color: white; align-items: center"> Inicio </a>
-            <br>
-            <a href="principal.jsp" style="font-size: 15pt; font-family: Comic Sans MS; color: white; align-items: center"> Volver </a>
-        </p>
+         <h1>Retweets por cuenta</h1><br><br>
+        <p>
+            
+        </p>      
     </body>
 </html>
