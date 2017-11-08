@@ -31,6 +31,7 @@
         <%    
             //Pruebas Locales
             //Mongo mg = new Mongo("localhost",27017);
+            
             //Pruebas en cluster
             Mongo mg = new Mongo("172.24.99.98");
             
@@ -47,9 +48,14 @@
             }
 
             TextClassifier tc = new TextClassifier();
-            tc.loadModel("D:\\01_ESTUDIOS\\MAESTRIA\\1_BIG_DATA\\TALLERES\\T3\\01_Enunciado_Entregables\\Prueba.model");            
+            //tc.loadModel("F:\\Andes\\Prueba.model");  //Camilo     
+            //tc.loadModel("D:\\01_ESTUDIOS\\MAESTRIA\\1_BIG_DATA\\TALLERES\\T3\\01_Enunciado_Entregables\\Prueba.model");  //Pablo
+            tc.loadModel("/home/estudiante/Prueba.model"); //Cluster
             String retorno = tc.classify("camilo");
             System.out.println("Retorno = camilo se clasifica como " + retorno.toUpperCase());
+            %> Retorno = <%= retorno%><%
+
+            mg.close();
         %>    
         <br><br>
         <p class="linkVolver" align="center">                

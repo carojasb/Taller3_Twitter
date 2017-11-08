@@ -35,6 +35,7 @@
         <%  
             //Pruebas Locales
             //Mongo mg = new Mongo("localhost",27017);
+            
             //Pruebas en Cluster
             Mongo mg = new Mongo("172.24.99.98");
             
@@ -55,7 +56,7 @@
             AggregationOutput output = collection.aggregate(group, sort);            
             
             String hashtag = null;
-            int times = 0, incremento=70, disminuir=8;
+            int times = 0, incremento=50, disminuir=5;
             String vari = "";
             String opcion = "";
             
@@ -83,6 +84,8 @@
                     }
                 }
             }
+
+            mg.close();
         %>
         
         <BR><BR>

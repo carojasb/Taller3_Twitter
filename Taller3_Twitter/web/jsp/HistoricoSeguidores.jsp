@@ -64,6 +64,7 @@
             
             //Pruebas Locales
             //Mongo mg = new Mongo("localhost",27017);
+            
             //Pruebas en cluster
             Mongo mg = new Mongo("172.24.99.98");
             
