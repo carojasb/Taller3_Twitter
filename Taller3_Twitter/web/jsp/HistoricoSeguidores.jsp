@@ -9,6 +9,7 @@
     Author     : Pablo
 --%>
 
+<%@page import="com.mongodb.AggregationOutput"%>
 <%@page import="com.mongodb.DBObject"%>
 <%@page import="com.mongodb.DBCursor"%>
 <%@page import="com.mongodb.BasicDBObject"%>
@@ -24,6 +25,7 @@
         <link href="../Resources/css/screen.css" rel="stylesheet" type="text/css"/>
         <script src="https://d3js.org/d3.v4.min.js"></script>
         <script src="../js/LineChartSeguidores.js"></script>
+        <script src="../js/BarchartRet.js"></script>
      </head>
     
     <body>
@@ -84,20 +86,26 @@
         
          <h1>Retweets por cuenta</h1><br><br>
          <%
-             whereQuery.clear();
-             whereQuery.put("account", CuentaConsultar);
-             whereQuery.put("retweet", "true");
-             DBCursor c_retweets = collection.find(whereQuery);
-             String documento_ret = "No_hay_resultados";
-             while(c_retweets.hasNext()) {
-                //System.out.println(cursor.next());
-             DBObject str_ret = cursor.next();
-             documento_ret = documento_ret + str_ret.toString();              
-            }
-             System.out.println(documento_ret);
+            DBObject matchFields = new BasicDBObject( "retweet",new BasicDBObject( "$eq", "Verdadero") );             
+            //System.out.println(matchFields.toString());            
+            DBObject match = new BasicDBObject("$match", matchFields ); 
+            System.out.println(match.toString());             
+            DBObject groupFields = new BasicDBObject( "_id", "$account");  
+            //System.out.println(groupFields.toString());            
+            groupFields.put("count", new BasicDBObject( "$sum", 1));             
+            //System.out.println(groupFields.toString());            
+            DBObject group = new BasicDBObject("$group", groupFields ); 
+            System.out.println(group.toString());         
+            AggregationOutput output = collection.aggregate(match,group);  
+            System.out.println(output.toString());
+             
          %>
-        <p>
-            
-        </p>      
+         <p class ="bar">
+            <svg width="960" height="500">
+                <script>
+                    var documento_json_ret = <%= documento_ret%>   
+                    draw_bar(documento_json_ret);
+               </script>             
+           </svg>    
     </body>
 </html>
