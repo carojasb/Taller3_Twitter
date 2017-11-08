@@ -98,6 +98,7 @@
             System.out.println(group.toString());         
             AggregationOutput output = collection.aggregate(match,group);  
             System.out.println(output.toString());
+             String documento_ret = output.toString().replace("", replacement);
              
          %>
          <p class ="bar">
