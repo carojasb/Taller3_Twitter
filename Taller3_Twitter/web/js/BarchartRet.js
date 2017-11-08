@@ -21,10 +21,10 @@ var g = svg.append("g")
     x.domain(documento_json_ret.map(function(d) { return d.area; }));
     y.domain([0, d3.max(documento_json_ret, function(d) { return d.value; })]);
 
-    g.append("g")
+    /*g.append("g")
         .attr("class", "axis axis--x")
         .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x));
+        .call(d3.axisBottom(x));*/
 
     g.append("g")
       	.attr("class", "axis axis--y")
