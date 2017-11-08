@@ -86,7 +86,7 @@
         
          <h1>Retweets por cuenta</h1><br><br>
          <%
-            DBObject matchFields = new BasicDBObject( "retweet",new BasicDBObject( "$eq", "Falso") );             
+            DBObject matchFields = new BasicDBObject( "retweet",new BasicDBObject( "$eq", "Verdadero") );             
             //System.out.println(matchFields.toString());            
             DBObject match = new BasicDBObject("$match", matchFields ); 
             //System.out.println(match.toString());             
