@@ -59,9 +59,14 @@
           </form>
           
             <%
-            String CuentaConsultar = new String(request.getParameter("Candidato_Elegido").getBytes("ISO-8859-1"),"UTF-8");
+            String CuentaConsultar = new String(request.getParameter("Candidato_Elegido").getBytes("ISO-8859-1"),"UTF-8");            
             System.out.println("Cuenta a consultar seguidores: " + CuentaConsultar);
-            Mongo mg = new Mongo("localhost",27017);
+            
+            //Pruebas Locales
+            //Mongo mg = new Mongo("localhost",27017);
+            //Pruebas en cluster
+            Mongo mg = new Mongo("172.24.99.98");
+            
             DB db = mg.getDB("Grupo05");
             DBCollection collection = db.getCollection("grupo05_tweet");
             BasicDBObject whereQuery = new BasicDBObject();

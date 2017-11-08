@@ -32,7 +32,12 @@
         
         <h1 style="color: black" align="center">Listado de los <%= cantidad %> hashtag más frecuentes </h1><BR><BR>
         
-        <%  Mongo mg = new Mongo("localhost",27017);
+        <%  
+            //Pruebas Locales
+            //Mongo mg = new Mongo("localhost",27017);
+            //Pruebas en Cluster
+            Mongo mg = new Mongo("172.24.99.98");
+            
             int cnt=0;
             String p;
             DB db = mg.getDB("Grupo05");

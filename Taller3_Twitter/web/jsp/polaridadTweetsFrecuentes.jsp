@@ -28,8 +28,12 @@
         <%String hash = new String(request.getParameter("Hashtag_Elegido").getBytes("ISO-8859-1"),"UTF-8"); %>
         <h1 style="color: black" align="center">Polaridad en los tweets del hashtag #<%=hash%></h1><BR><BR>
         
-        <%            
-            Mongo mg = new Mongo("localhost",27017);
+        <%    
+            //Pruebas Locales
+            //Mongo mg = new Mongo("localhost",27017);
+            //Pruebas en cluster
+            Mongo mg = new Mongo("172.24.99.98");
+            
             DB db = mg.getDB("Grupo05");
             DBCollection collection = db.getCollection("grupo05_tweet");
             BasicDBObject whereQuery = new BasicDBObject();
