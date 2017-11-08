@@ -50,7 +50,7 @@
             AggregationOutput output = collection.aggregate(group, sort);            
             
             String hashtag = null;
-            int times = 0;
+            int times = 0, incremento=70, disminuir=8;
             String vari = "";
             String opcion = "";
             
@@ -67,12 +67,13 @@
                         cnt++;                        
                         
                         if (cnt < Integer.parseInt(cantidad)){
-                            vari = vari + "{\"text\":\"#"+hashtag+"\",\"size\":"+times+"},";
+                            vari = vari + "{\"text\":\"#"+hashtag+"\",\"size\":"+(times+incremento)+"},";
                             opcion = opcion + "<option value=\""+hashtag+"\">"+"#"+hashtag+"<//option>";
-                            
+                            incremento = incremento - disminuir;
                         }else if (cnt == Integer.parseInt(cantidad)){
-                            vari = vari + "{\"text\":\"#"+hashtag+"\",\"size\":"+times/7+"}";
+                            vari = vari + "{\"text\":\"#"+hashtag+"\",\"size\":"+(times+incremento)+"}";
                             opcion = opcion + "<option value=\""+hashtag+"\">"+"#"+hashtag+"<//option>";
+                            incremento = incremento - disminuir;
                         }
                     }
                 }

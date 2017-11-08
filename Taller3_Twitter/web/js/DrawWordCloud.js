@@ -15,17 +15,17 @@ function DrawWordCloud(frequency_list) {
 
     function draw(words) {
         d3.select("body").append("svg")
-                .attr("width", 1200)
+                .attr("width", 1600)
                 .attr("height", 400)
                 .attr("class", "wordcloud")
                 .append("g")
                 // without the transform, words words would get cutoff to the left and top, they would
                 // appear outside of the SVG area
-                .attr("transform", "translate(620,200)")
+                .attr("transform", "translate(600,200)")
                 .selectAll("text")
                 .data(words)
                 .enter().append("text")
-                .style("font-size", function(d) { return d.size*4 + "px"; })
+                .style("font-size", function(d) { return d.size + "px"; })
                 .style("fill", function(d, i) { return color(i); })
                 .attr("transform", function(d) {
                     return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
