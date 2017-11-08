@@ -4,12 +4,14 @@
     Author     : Kmilo
 --%>
 
+<%@page import="uniandes.edu.co.clasificador.TextClassifier"%>
 <%@page import="com.mongodb.DBObject"%>
 <%@page import="com.mongodb.DBCursor"%>
 <%@page import="com.mongodb.BasicDBObject"%>
 <%@page import="com.mongodb.DBCollection"%>
 <%@page import="com.mongodb.Mongo"%>
 <%@page import="com.mongodb.DB"%>
+<%@page import="java.io.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -36,6 +38,11 @@
                 %><h2 align="center">Tweet <%= cnt+1 %><%= " = " + str.get("text") + "\n" %> </h2><BR><%
                 cnt++;
             }
+
+            TextClassifier tc = new TextClassifier();
+            tc.loadModel("F:\\Andes\\Prueba.model");            
+            String retorno = tc.classify("camilo");
+            System.out.println("Retorno = camilo se clasifica como " + retorno.toUpperCase());
         %>    
         <br><br>
         <p class="linkVolver" align="center">                
