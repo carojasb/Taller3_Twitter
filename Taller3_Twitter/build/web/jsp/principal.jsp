@@ -29,7 +29,8 @@
             }
         </script>
     </head>
-    <body style="background-color: darkslategray">
+    <body>
+    <!--<body style="background-color: darkslategray">-->
         
         <BR><BR><BR>
         

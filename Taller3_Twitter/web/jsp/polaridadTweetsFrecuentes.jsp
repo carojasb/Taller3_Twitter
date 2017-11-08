@@ -20,7 +20,10 @@
         <title>Polaridad</title>
         <link href="../Resources/css/screen.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body style="background-color: darkslategray"><BR><BR><BR> 
+    <body>
+    <!--<body style="background-color: darkslategray">-->
+    
+        <BR><BR><BR> 
         
         <%String hash = new String(request.getParameter("Hashtag_Elegido").getBytes("ISO-8859-1"),"UTF-8"); %>
         <h1 style="color: black" align="center">Polaridad en los tweets del hashtag #<%=hash%></h1><BR><BR>
@@ -40,7 +43,7 @@
             }
 
             TextClassifier tc = new TextClassifier();
-            tc.loadModel("F:\\Andes\\Prueba.model");            
+            tc.loadModel("D:\\01_ESTUDIOS\\MAESTRIA\\1_BIG_DATA\\TALLERES\\T3\\01_Enunciado_Entregables\\Prueba.model");            
             String retorno = tc.classify("camilo");
             System.out.println("Retorno = camilo se clasifica como " + retorno.toUpperCase());
         %>    

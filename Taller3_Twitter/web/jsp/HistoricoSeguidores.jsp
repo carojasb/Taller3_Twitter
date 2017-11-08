@@ -89,22 +89,26 @@
             DBObject matchFields = new BasicDBObject( "retweet",new BasicDBObject( "$eq", "Verdadero") );             
             //System.out.println(matchFields.toString());            
             DBObject match = new BasicDBObject("$match", matchFields ); 
-            System.out.println(match.toString());             
+            //System.out.println(match.toString());             
             DBObject groupFields = new BasicDBObject( "_id", "$account");  
             //System.out.println(groupFields.toString());            
             groupFields.put("count", new BasicDBObject( "$sum", 1));             
             //System.out.println(groupFields.toString());            
             DBObject group = new BasicDBObject("$group", groupFields ); 
-            System.out.println(group.toString());         
+            //System.out.println(group.toString());         
             AggregationOutput output = collection.aggregate(match,group);  
             System.out.println(output.toString());
              String documento_ret = output.toString();
-             
+             int inicio = documento_ret.indexOf("[");
+             int fin = documento_ret.indexOf("]");
+             String doc = documento_ret.substring(inicio, fin+2);
+             doc = doc.replace("_id", "area").replace("count", "value");
+             System.out.println(doc);
          %>
          <p class ="bar">
-            <svg width="960" height="500">
+            <svg width="1200" height="500">
                 <script>
-                    var documento_json_ret = <%= documento_ret%>   
+                    var documento_json_ret = <%= doc%>   
                     draw_bar(documento_json_ret);
                </script>             
            </svg>    

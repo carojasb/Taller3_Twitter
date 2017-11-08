@@ -25,7 +25,9 @@
          <!-------------------------------------------------------------->
         
     </head>
-    <body style="background-color: darkslategray"><BR><BR><BR>        
+    <body>
+    <!--<body style="background-color: darkslategray">-->
+        <BR><BR><BR>        
         <%String cantidad = new String(request.getParameter("hashtags").getBytes("ISO-8859-1"),"UTF-8"); %>
         
         <h1 style="color: black" align="center">Listado de los <%= cantidad %> hashtag más frecuentes </h1><BR><BR>
