@@ -34,7 +34,7 @@
         
         <BR><BR><BR>
         
-        <h1 style="color: black" align="center">Tweet Sentiment Analysis</h1><BR><BR><BR>            
+        <h1 style="color: black" align="center"><b>Tweet Sentiment Analysis</b></h1><BR><BR><BR>            
         
         <form name="form_frecuentes" action="tweetsFrecuentes.jsp" onsubmit="return validarCantidad()" align="center">
             <fieldset style="background-color:darkgrey;"><br>

@@ -30,14 +30,14 @@
         <BR><BR><BR>        
         <%String cantidad = new String(request.getParameter("hashtags").getBytes("ISO-8859-1"),"UTF-8"); %>
         
-        <h1 style="color: black" align="center">Listado de los <%= cantidad %> hashtag más frecuentes </h1><BR><BR>
+        <h1 style="color: black" align="center"><b>Listado de los <%= cantidad %> hashtag más frecuentes</b></h1><BR><BR>
         
         <%  
             //Pruebas Locales
-            //Mongo mg = new Mongo("localhost",27017);
+            Mongo mg = new Mongo("localhost",27017);
             
             //Pruebas en Cluster
-            Mongo mg = new Mongo("172.24.99.98");
+            //Mongo mg = new Mongo("172.24.99.98");
             
             int cnt=0;
             String p;
@@ -56,7 +56,7 @@
             AggregationOutput output = collection.aggregate(group, sort);            
             
             String hashtag = null;
-            int times = 0, incremento=50, disminuir=5;
+            int times = 0, incremento=0, disminuir=0;
             String vari = "";
             String opcion = "";
             
