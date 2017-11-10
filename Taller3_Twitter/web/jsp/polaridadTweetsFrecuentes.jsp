@@ -57,12 +57,15 @@
                             <td align="center"><b><%= cnt+1 %></b></td>
                             <td><%= str.get("text")%> </td><% 
                                 cnt++;
+                                String retorno = "";
                                 TextClassifier tc = new TextClassifier();
-                                tc.loadModel("F:\\Andes\\Prueba.model");  //Camilo     
+                                tc.loadModel("F:\\Andes\\Tweets.model");
+                                //tc.loadModel("F:\\Andes\\Prueba.model");  //Camilo     
                                 //tc.loadModel("D:\\01_ESTUDIOS\\MAESTRIA\\1_BIG_DATA\\TALLERES\\T3\\01_Enunciado_Entregables\\Prueba.model");  //Pablo
                                 //tc.loadModel("/home/estudiante/Prueba.model"); //Cluster
-                                String retorno = tc.classify(str.get("text").toString());
-                                if(retorno.equals("muyMalo")){
+                                retorno = tc.classify(str.get("text").toString(), str.get("account").toString(), Integer.parseInt(str.get("countFavoritos").toString()));                                
+                                //retorno = "d";
+                                if(retorno.equals("Muy_Malo")){
                                     muymalo ++;
                                 }else if(retorno.equals("Malo")){
                                     malo ++;
@@ -70,7 +73,7 @@
                                     neutral ++;
                                 }else if(retorno.equals("Bueno")){
                                     bueno ++;
-                                }else if(retorno.equals("MuyBueno")){
+                                }else if(retorno.equals("Muy_Bueno")){
                                     muybueno ++;
                                 }
                                 %>
@@ -79,6 +82,7 @@
                     }%>
                 <%                    
             mg.close();%>
+            
             </table><br><br><br><br>
             <div style="text-align:center;">
                 <table BORDER WIDTH="25%" align="center" border=5 border-color = "black" id="myTable" class="myTable"
@@ -112,6 +116,18 @@
                 </table>
             </div>
         <br><br>
+        <%TextClassifier tc = new TextClassifier();
+        tc.loadModel("F:\\Andes\\Tweets.model");        
+        //tc.loadModel("F:\\Andes\\Prueba.model");  //Camilo     
+        //tc.loadModel("D:\\01_ESTUDIOS\\MAESTRIA\\1_BIG_DATA\\TALLERES\\T3\\01_Enunciado_Entregables\\Prueba.model");  //Pablo
+        //tc.loadModel("/home/estudiante/Prueba.model"); //Cluster
+        String ret1 = tc.classify("amor","camilo",214);                                
+        //String ret1 = "s";
+        %><br>Tweet = amor ; Cuenta = camilo ; CountFavoritos =  214 ..... <%=ret1%><%            
+        ret1 = tc.classify("malparido","uribe",2354);                        
+        %><br>Tweet = malparido ; Cuenta = uribe ; CountFavoritos =  2354 ..... <%=ret1%><%
+        ret1 = tc.classify("ambiente","camilo",236);                        
+        %><br>Tweet = ambiente ; Cuenta = camilo ; CountFavoritos =  236 ..... <%=ret1%>        
         <p class="linkVolver" align="center">                
             <a href="../index.jsp" style="font-size: 15pt; font-family: Comic Sans MS; color: white; align-items: center"> Inicio </a>
             <br>

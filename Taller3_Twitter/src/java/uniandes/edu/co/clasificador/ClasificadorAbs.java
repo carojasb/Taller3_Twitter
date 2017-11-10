@@ -32,7 +32,7 @@ public abstract class ClasificadorAbs {
 	    	}
 	    	
 	    }
-	    
+            	    
 	}
 	/**
 	 * Carga un modelo entrenado desde archivo en un clasificador Dummy, 
@@ -56,7 +56,9 @@ public abstract class ClasificadorAbs {
 		}
 	}
 	public abstract void entrenar(Instances instances) throws Exception;
+        
 	public void clasificar(Instances instances){}
+        
 	public Double clasificar(Instance inst) throws Exception{
 		if(cl!=null){
 			double pred = cl.classifyInstance(inst);
@@ -64,6 +66,7 @@ public abstract class ClasificadorAbs {
 		}
 		return null;
 	}
+        
 	public boolean isEntrenado(){
 		return entrenado;
 	}

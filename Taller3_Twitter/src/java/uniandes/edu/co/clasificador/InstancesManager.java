@@ -68,23 +68,16 @@ public class InstancesManager {
 		}
 		return atributos;
 	}
-	public static Instance createInstanceFromText(String text, Instances header, boolean useStemmer) throws Exception {
-		System.out.println("Stemmer?" + useStemmer);
-		Tokenizer tk = new WordTokenizer();		
-		tk.tokenize(text);
-		ArrayList<String> a=new ArrayList<>();
-		while(tk.hasMoreElements()){
-			String w = useStemmer?s.stem((String) tk.nextElement()):((String) tk.nextElement()).toLowerCase();
-			a.add(w);
-		}
-		Instance i = new SparseInstance(header.size());
-		i.setDataset(header);
-		for (String w:a){
-			if(header.attribute(w)!=null){
-				i.setValue(header.attribute(w), 1);
-			}
-		}
-		return i;
+	public static Instance createInstanceFromText(String text, String cuenta, int favoritos, Instances header, boolean useStemmer) throws Exception {
 		
+            Instance i = new SparseInstance(3);
+            i.setDataset(header);                        
+            i.setValue(header.attribute(0), text);
+            i.setValue(header.attribute(1), cuenta);
+            i.setValue(header.attribute(2), favoritos);
+
+            System.out.println("esto es i = " + i);
+                        
+            return i;		          
 	}
 }
