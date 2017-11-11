@@ -68,13 +68,16 @@ public class InstancesManager {
 		}
 		return atributos;
 	}
-	public static Instance createInstanceFromText(String text, String cuenta, int favoritos, Instances header, boolean useStemmer) throws Exception {
+	public static Instance createInstanceFromText(String cuenta, String text, String retweet, int seguidores, int favoritos, String locacion, Instances header, boolean useStemmer) throws Exception {
 		
-            Instance i = new SparseInstance(3);
+            Instance i = new SparseInstance(5);
             i.setDataset(header);                        
-            i.setValue(header.attribute(0), text);
-            i.setValue(header.attribute(1), cuenta);
-            i.setValue(header.attribute(2), favoritos);
+            i.setValue(header.attribute(0), cuenta);
+            i.setValue(header.attribute(1), text);
+            i.setValue(header.attribute(2), retweet);
+            i.setValue(header.attribute(3), seguidores);
+            i.setValue(header.attribute(4), favoritos);
+            i.setValue(header.attribute(5), locacion);
 
             System.out.println("esto es i = " + i);
                         

@@ -39,8 +39,8 @@
             DBCollection collection = db.getCollection("grupo05_tweet");
             BasicDBObject whereQuery = new BasicDBObject();
             whereQuery.put("hashtag", hash);            
-            DBCursor cursor = collection.find(whereQuery);       
-            int cnt=0, muymalo=0, malo=0, neutral=0, bueno=0, muybueno=0;
+            DBCursor cursor = collection.find(whereQuery);                   
+            int cnt=0, muynegativo=0, negativo=0, neutro=0, positivo=0, muypositivo=0;
             
             %>             
             <table BORDER WIDTH="80%" align="center" border=5 border-color = "black" id="myTable" class="myTable"
@@ -59,23 +59,22 @@
                                 cnt++;
                                 String retorno = "";
                                 TextClassifier tc = new TextClassifier();
-                                tc.loadModel("F:\\Andes\\Tweets.model");
-                                //tc.loadModel("F:\\Andes\\Prueba.model");  //Camilo     
+                                tc.loadModel("F:\\Andes\\Entrenamiento\\Tweets.model");                                  
                                 //tc.loadModel("D:\\01_ESTUDIOS\\MAESTRIA\\1_BIG_DATA\\TALLERES\\T3\\01_Enunciado_Entregables\\Prueba.model");  //Pablo
                                 //tc.loadModel("/home/estudiante/Prueba.model"); //Cluster
-                                retorno = tc.classify(str.get("text").toString(), str.get("account").toString(), Integer.parseInt(str.get("countFavoritos").toString()));                                
+                                retorno = tc.classify(str.get("account").toString(), str.get("text").toString(), str.get("retweet").toString(), Integer.parseInt(str.get("countSeguidores").toString()), Integer.parseInt(str.get("countFavoritos").toString()), str.get("location").toString());                                
                                 //retorno = "d";
-                                if(retorno.equals("Muy_Malo")){
-                                    muymalo ++;
-                                }else if(retorno.equals("Malo")){
-                                    malo ++;
+                                if(retorno.equals("Muy_Negativo")){
+                                    muynegativo ++;
+                                }else if(retorno.equals("Negativo")){
+                                    negativo ++;
                                 }else if(retorno.equals("Neutro")){
-                                    neutral ++;
-                                }else if(retorno.equals("Bueno")){
-                                    bueno ++;
-                                }else if(retorno.equals("Muy_Bueno")){
-                                    muybueno ++;
-                                }
+                                    neutro ++;
+                                }else if(retorno.equals("Positivo")){
+                                    positivo ++;
+                                }else if(retorno.equals("Muy_Positivo")){
+                                    muypositivo ++;
+                                } 
                                 %>
                             <td align="center"><%=retorno%></td>
                         </tr><%
@@ -95,39 +94,27 @@
                     </tr>
                     <tr>
                         <td>Muy Malo</td>
-                        <td><%=muymalo%></td>
+                        <td><%=muynegativo%></td>
                     </tr>
                     <tr>
                         <td>Malo</td>
-                        <td><%=malo%></td>
+                        <td><%=negativo%></td>
                     </tr>
                     <tr>
                         <td>Neutral</td>
-                        <td><%=neutral%></td>
+                        <td><%=neutro%></td>
                     </tr>
                     <tr>
                         <td>Bueno</td>
-                        <td><%=bueno%></td>
+                        <td><%=positivo%></td>
                     </tr>
                     <tr>
                         <td>Muy Bueno</td>
-                        <td><%=muybueno%></td>
+                        <td><%=muypositivo%></td>
                     </tr>
                 </table>
             </div>
-        <br><br>
-        <%TextClassifier tc = new TextClassifier();
-        tc.loadModel("F:\\Andes\\Tweets.model");        
-        //tc.loadModel("F:\\Andes\\Prueba.model");  //Camilo     
-        //tc.loadModel("D:\\01_ESTUDIOS\\MAESTRIA\\1_BIG_DATA\\TALLERES\\T3\\01_Enunciado_Entregables\\Prueba.model");  //Pablo
-        //tc.loadModel("/home/estudiante/Prueba.model"); //Cluster
-        String ret1 = tc.classify("amor","camilo",214);                                
-        //String ret1 = "s";
-        %><br>Tweet = amor ; Cuenta = camilo ; CountFavoritos =  214 ..... <%=ret1%><%            
-        ret1 = tc.classify("malparido","uribe",2354);                        
-        %><br>Tweet = malparido ; Cuenta = uribe ; CountFavoritos =  2354 ..... <%=ret1%><%
-        ret1 = tc.classify("ambiente","camilo",236);                        
-        %><br>Tweet = ambiente ; Cuenta = camilo ; CountFavoritos =  236 ..... <%=ret1%>        
+        <br><br>        
         <p class="linkVolver" align="center">                
             <a href="../index.jsp" style="font-size: 15pt; font-family: Comic Sans MS; color: white; align-items: center"> Inicio </a>
             <br>

@@ -57,18 +57,22 @@ public class TextClassifier {
         System.out.println("Respuesta final = " + i.stringValue(i.classAttribute()));*/
     }
     
-    public String classify(String text, String cuenta, int favoritos) throws Exception{
-        Instance i = InstancesManager.createInstanceFromText(text, cuenta, favoritos, classifier.getHeader(), false);
+    public String classify(String cuenta, String text, String retweet, int seguidores, int favoritos, String locacion) throws Exception{
+        Instance i = InstancesManager.createInstanceFromText(cuenta, text, retweet, seguidores, favoritos, locacion, classifier.getHeader(), false);
         
         double pred = classifier.clasificar(i);
         String prediccion = "";
                         
         if (pred == 0){
-            prediccion = "Bueno";
+            prediccion = "Muy Negativo";
         }else if (pred == 1){
-            prediccion = "Neutro";
+            prediccion = "Negativo";
         }else if (pred == 2){
-            prediccion = "Malo";
+            prediccion = "Neutro";
+        }else if (pred == 3){
+            prediccion = "Positivo";
+        }else if (pred == 4){
+            prediccion = "Muy Positivo";
         }
         
         return prediccion;

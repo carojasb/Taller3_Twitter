@@ -49,11 +49,11 @@
             //Agrupar por hashtag
             DBObject groupFields = new BasicDBObject( "_id", "$hashtag");            
             groupFields.put("count", new BasicDBObject( "$sum", 1));
-            DBObject group = new BasicDBObject("$group", groupFields );            
+            DBObject group = new BasicDBObject("$group", groupFields );
             DBObject sortFields = new BasicDBObject("count", -1);
             DBObject sort = new BasicDBObject("$sort", sortFields );
             
-            AggregationOutput output = collection.aggregate(group, sort);            
+            AggregationOutput output = collection.aggregate(group, sort);
             
             String hashtag = null;
             int times = 0, incremento=0, disminuir=0;
