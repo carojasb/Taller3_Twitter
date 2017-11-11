@@ -64,7 +64,7 @@
                                 //tc.loadModel("/home/estudiante/Prueba.model"); //Cluster
                                 retorno = tc.classify(str.get("account").toString(), str.get("text").toString(), str.get("retweet").toString(), Integer.parseInt(str.get("countSeguidores").toString()), Integer.parseInt(str.get("countFavoritos").toString()), str.get("location").toString());                                
                                 //retorno = "d";
-                                if(retorno.equals("Muy_Negativo")){
+                                if(retorno.equals("Muy Negativo")){
                                     muynegativo ++;
                                 }else if(retorno.equals("Negativo")){
                                     negativo ++;
@@ -72,7 +72,7 @@
                                     neutro ++;
                                 }else if(retorno.equals("Positivo")){
                                     positivo ++;
-                                }else if(retorno.equals("Muy_Positivo")){
+                                }else if(retorno.equals("Muy Positivo")){
                                     muypositivo ++;
                                 } 
                                 %>
@@ -93,23 +93,23 @@
                         <th>CANTIDAD</th>
                     </tr>
                     <tr>
-                        <td>Muy Malo</td>
+                        <td>Muy Negativo</td>
                         <td><%=muynegativo%></td>
                     </tr>
                     <tr>
-                        <td>Malo</td>
+                        <td>Negativo</td>
                         <td><%=negativo%></td>
                     </tr>
                     <tr>
-                        <td>Neutral</td>
+                        <td>Neutro</td>
                         <td><%=neutro%></td>
                     </tr>
                     <tr>
-                        <td>Bueno</td>
+                        <td>Positivo</td>
                         <td><%=positivo%></td>
                     </tr>
                     <tr>
-                        <td>Muy Bueno</td>
+                        <td>Muy Positivo</td>
                         <td><%=muypositivo%></td>
                     </tr>
                 </table>
