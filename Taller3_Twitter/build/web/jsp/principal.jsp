@@ -45,7 +45,7 @@
         <form name="form_frecuentes" action="tweetsFrecuentes.jsp" onsubmit="return validarCantidad()" align="center">
             <fieldset style="background-color:darkgrey;"><br>
                 <p class="BtntweetsFrecuentes" align="center">
-                    <label style="color: black; font-size:18px"> Buscar los </label>
+                    <label style="color: black; font-size:18px"> Consultar los </label>
                     <input id="cantidad" type="text" name="hashtags" placeholder="Ej: 0" size="1" onChange="validarSiNumero(this.value);"/>
                     <label style="color: black; font-size:18px"> hashtags más frecuentes </label><BR><BR>
                     <input type="submit" value="Buscar" name="btn_tweetsFrecuentes" align="center"/>
@@ -59,8 +59,9 @@
         <form name="form_seguidores" action="HistoricoSeguidores.jsp">                        
             <fieldset style="background-color:darkgrey;"><br>
                 <p class="BtnHistorico" align="center">
-                     <input type="submit" name="Consultar_Seguidores" value="Consultar_Seguidores" align="center" />
-                     <input type ="text" name="Candidato_Elegido" value="AlvaroUribeVel" hidden="true"/>
+                    <label style="color: black; font-size:18px">Consultar las estadísticas por cuenta </label><br><br>
+                    <input type="submit" name="Consultar_Seguidores" value="Buscar" align="center" />
+                    <input type ="text" name="Candidato_Elegido" value="AlvaroUribeVel" hidden="true"/>
                 </p>
             </fieldset>
         </form>
@@ -96,11 +97,12 @@
                         }
                         
                     %>
-                    <select name="Cuenta_elegida" id="Cuenta_elegida">
+                    <label style="color: black; font-size:18px">Consultar el nivel de apoyo a la cuenta de </label>
+                    <select name="Cuenta_elegida" id="Cuenta_elegida">                        
                         <%=opcion%>
                     </select>
                     <br><br>
-                    <input type="submit" value="Nivel de apoyo a las cuentas" name="btn_apoyoCuenta" align="center"/>
+                    <input type="submit" value="Buscar" name="btn_apoyoCuenta" align="center"/>
                 </p>
                 </fieldset>
         </form>
