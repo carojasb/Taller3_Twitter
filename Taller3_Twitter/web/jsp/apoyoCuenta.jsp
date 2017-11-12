@@ -19,6 +19,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Nivel de apoyo a las cuentas</title>
         <link href="../Resources/css/screen.css" rel="stylesheet" type="text/css"/>
+         <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="../js/DrawPie.js"></script>
     </head>
     <body>
         
@@ -97,6 +99,20 @@
                 if (muypositivo > 0){
                     pmuypositivo = muypositivo / total * 100;
                 }
+                
+                String doc_porcentajes = "[{" + "\"" + "label" + "\"" + " : " + "\"" + "Muy Negativo" + "\"" + " , " + "\"" + "value" + "\""+ " : "+ pmuynegativo + "}" ;
+                String pnegativo_doc = ", {" + "\"" + "label" + "\"" + " : " + "\"" + "Negativo" + "\"" + " , " + "\"" + "value" + "\""+ " : "+ pnegativo + "}";
+                String neutro_doc = ", {" + "\"" + "label" + "\"" + " : " + "\"" + "Neutro" + "\"" + " , " + "\"" + "value" + "\""+ " : "+ pneutro + "}";
+                String ppositivo_doc = ", {" + "\"" + "label"  + "\"" + " : " + "\"" + "Positivo" + "\"" + " , " + "\"" + "value" + "\""+ " : "+ ppositivo + "}";
+                String pmuypositivo_doc = ", {" + "\"" +"label" + "\"" + " : " + "\"" + "Muy Positivo " + "\"" + " , " + "\"" + "value" + "\""+ " : "+ pmuypositivo + "}";
+                
+                /*String doc_porcentajes = "{" + "\"" + "TOTAL_TWEETS" + "\"" + " : " + "{" + "\"" + "Muy Negativo" + "\"" + " : " + pmuynegativo;
+                String pnegativo_doc = " , " + "\"" + "Negativo" + "\"" + " : "+ pnegativo;
+                String neutro_doc = " , " + "\"" + "Neutro" + "\"" + " : "+ pneutro;
+                String ppositivo_doc = " , " + "\"" + "Positivo" + "\"" + " : "+ ppositivo;
+                String pmuypositivo_doc = " , " + "\"" + "Muy Positivo" + "\"" + " : "+ pmuypositivo;*/
+                doc_porcentajes = doc_porcentajes + pnegativo_doc + neutro_doc + ppositivo_doc + pmuypositivo_doc + "]";
+                System.out.println(doc_porcentajes);
 
             %>            
             <br><br><br>
@@ -135,7 +151,7 @@
                         <td><%=Math.rint(ppositivo*100)/100%>%</td>
                     </tr>
                     <tr>
-                        <td>Muy Negativo</td>
+                        <td>Muy Positivo</td>
                         <td><%=muypositivo%>
                         <td><%=Math.rint(pmuypositivo*100)/100%>%</td>
                     </tr>
@@ -147,7 +163,18 @@
                 </table>
             </div>                        
         </form>
-        <br><br>        
+         <br><br>      
+         
+        <!-- Division para el piechart  --> 
+        <p id="chart" align="center"></p>
+            <script>
+                var doc_json_porcentajes = <%= doc_porcentajes%>  
+                drawpie(doc_json_porcentajes);
+            </script>         
+          <!-- Division para el piechart  --> 
+          
+        <br><br>     
+        
         <p class="linkVolver" align="center">                
             <a href="../index.jsp" style="font-size: 15pt; font-family: Comic Sans MS; color: white; align-items: center"> Inicio </a>
             <br>
