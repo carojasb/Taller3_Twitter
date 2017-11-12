@@ -29,14 +29,17 @@
      </head>
     
     <body>
-        <h1>Numero de Seguidores para una cuenta en el tiempo</h1><br><br>
-        <p>
-            La siguiente grafica nos permite ver el cambio del numero de seguidores de una cuenta especifica en diferentes instantes de tiempo. El eje X indica la fecha (dia, mes, año,
-            hora, minuto, segundo) en la cual fue tomada la muestra de los datos y el eje y muestra el numero seguidores de esta cuenta.
+        
+        <br><br><br>
+        
+        <h1 style="color: black" align="center"><b>Numero de Seguidores para una cuenta en el tiempo</b></h1><br><br><br>
+        <p align="center">
+            La siguiente grafica nos permite ver el cambio del numero de seguidores de una cuenta especifica en diferentes instantes de tiempo.<br><br>
+            El eje <b><i>"X"</i></b> indica la fecha (dia, mes, año, hora, minuto, segundo) en la cual fue tomada la muestra de los datos y el eje <b><i>"Y"</i></b> muestra el numero seguidores de esta cuenta.
         </p>
         <br>
         <div class="Line_chart">
-          <form name="Form_Button" action="HistoricoSeguidores.jsp" onsubmit="return consultar_seguidores()">     
+          <form name="Form_Button" action="HistoricoSeguidores.jsp" onsubmit="return consultar_seguidores()" align="center">     
              <select name="Candidato_Elegido" id="candidatos">
                 <option value="German_Vargas">German Vargas Lleras</option> 
                 <option value="IvanDuque">IvanDuque</option> 
@@ -82,15 +85,15 @@
             documento_graficar =  documento_graficar + "]}";
             String documento_final = documento_graficar.replace("},]}", "}]}");
             //System.out.println(documento_final);
-            %>    
+            %>
             <script>
                 var documento_json = <%= documento_final%>   
                 var country = "Tweet"
                 LineChartSeguidores(documento_json,country);
-            </script>                
+            </script>
         </div>  
-        
-         <h1>Retweets por cuenta</h1><br><br>
+        <br><br><br><br><br><br>
+        <h1 style="color: black" align="center"><b>Retweets por cuenta</b></h1><br><br>
          <%
             DBObject matchFields = new BasicDBObject( "retweet",new BasicDBObject( "$eq", "Verdadero") );             
             //System.out.println(matchFields.toString());            
@@ -119,4 +122,10 @@
                </script>             
            </svg>    
     </body>
+    <br><br>        
+    <p class="linkVolver" align="center">                
+        <a href="../index.jsp" style="font-size: 15pt; font-family: Comic Sans MS; color: white; align-items: center"> Inicio </a>
+        <br>
+        <a href="principal.jsp" style="font-size: 15pt; font-family: Comic Sans MS; color: white; align-items: center"> Volver </a>
+    </p>
 </html>
