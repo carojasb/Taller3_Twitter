@@ -41,8 +41,9 @@
         <div class="Line_chart">
           <form name="Form_Button" action="HistoricoSeguidores.jsp" onsubmit="return consultar_seguidores()" align="center">     
              <select name="Candidato_Elegido" id="candidatos">
+                <option value="AlvaroUribeVel">Álvaro Uribe Vélez</option>
                 <option value="German_Vargas">German Vargas Lleras</option> 
-                <option value="IvanDuque">IvanDuque</option> 
+                <option value="IvanDuque">IvanDuque</option>
                 <option value="mluciaramirez">Marta Lucía Ramírez</option> 
                 <option value="sergio_fajardo">Sergio Fajardo</option>                 
                 <option value="DeLaCalleHum">Humberto de la Calle</option> 
@@ -51,8 +52,7 @@
                 <option value="MoralesViviane">Viviane Morales</option>
                 <option value="PinzonBueno">Pinzón Bueno</option>
                  <option value="RafaelPardo">Rafael Pardo</option> 
-                <option value="ClaudiaLopez">Claudia López</option> 
-                <option value="AlvaroUribeVel">Álvaro Uribe Vélez</option>
+                <option value="ClaudiaLopez">Claudia López</option>                 
                 <option value="IvanCepedaCast">Iván Cepeda Castro</option> 
                 <option value="elespectador">El Espectador</option>
                 <option value="ELTIEMPO">El Tiempo</option>
@@ -90,7 +90,7 @@
                 var documento_json = <%= documento_final%>   
                 var country = "Tweet"
                 LineChartSeguidores(documento_json,country);
-            </script>
+            </script>            
         </div>  
         <br><br><br><br><br><br>
         <h1 style="color: black" align="center"><b>Retweets por cuenta</b></h1><br><br>

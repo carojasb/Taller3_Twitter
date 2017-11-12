@@ -68,14 +68,35 @@
                 
                 int total_entero = muynegativo + negativo + neutro + positivo + muypositivo;
                 Double total = (double) muynegativo + (double) negativo + (double) neutro + (double) positivo + (double) muypositivo;
+                String ptotal = "";
                 
-                DecimalFormat df = new DecimalFormat("#.00");
-                Double pmuynegativo = muynegativo / total * 100;
-                Double pnegativo = negativo / total * 100;
-                Double pneutro = neutro / total * 100;
-                Double ppositivo = positivo / total * 100;
-                Double pmuypositivo = muypositivo / total * 100;
+                if (total > 0){
+                    ptotal = "100";
+                }else{
+                    ptotal = "0.0";
+                }
                 
+                Double pmuynegativo = 0.00;
+                Double pnegativo = 0.00;
+                Double pneutro = 0.00;
+                Double ppositivo = 0.00;
+                Double pmuypositivo = 0.00;
+                
+                if (muynegativo > 0){
+                    pmuynegativo = muynegativo / total * 100;
+                }
+                if (negativo > 0){
+                    pnegativo = negativo / total * 100;
+                }
+                if (neutro > 0){
+                    pneutro = neutro / total * 100;
+                }
+                if (positivo > 0){
+                    ppositivo = positivo / total * 100;
+                }
+                if (muypositivo > 0){
+                    pmuypositivo = muypositivo / total * 100;
+                }
 
             %>            
             <br><br><br>
@@ -121,7 +142,7 @@
                     <tr>
                         <th><b>TOTAL</b></th>
                         <th><b><%=total_entero%></b></th>
-                        <th><b>100%</b></th>
+                        <th><b><%=ptotal%>%</b></th>
                     </tr>
                 </table>
             </div>                        

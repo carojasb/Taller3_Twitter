@@ -60,7 +60,7 @@
             <fieldset style="background-color:darkgrey;"><br>
                 <p class="BtnHistorico" align="center">
                      <input type="submit" name="Consultar_Seguidores" value="Consultar_Seguidores" align="center" />
-                     <input type ="text" name="Candidato_Elegido" value="German_Vargas" hidden="true"/>
+                     <input type ="text" name="Candidato_Elegido" value="AlvaroUribeVel" hidden="true"/>
                 </p>
             </fieldset>
         </form>
