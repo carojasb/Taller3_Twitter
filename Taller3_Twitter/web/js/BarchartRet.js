@@ -36,7 +36,7 @@ var g = svg.append("g")
         .attr("dy", "0.71em")
         .attr("text-anchor", "end")
         .attr("fill", "#5D6971")
-        .text("Cantidad Retweets");
+        .text("Numero de Tweets Retweeteados");
 
     g.selectAll(".bar")
       	.data(documento_json_ret)

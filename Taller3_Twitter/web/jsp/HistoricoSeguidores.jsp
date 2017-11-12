@@ -93,7 +93,13 @@
             </script>            
         </div>  
         <br><br><br><br><br><br>
-        <h1 style="color: black" align="center"><b>Retweets por cuenta</b></h1><br><br>
+        <h1 style="color: black" align="center"><b>Numero de Tweets con Retweet por cuenta</b></h1><br><br>
+         <p align="center">
+            A continuacion se grafica el numero de tweets que han sido retweeteados por cada cuenta.<br><br>
+            En este caso, aquella cuenta que tiene mayor numero de tweets con esta accion, es una cuenta en donde sus seguidores o no seguiores tienen interaccion para compartir
+            las opiniones de la misma, convirtiendola en una fuente alta de influencia.
+        </p>
+        <br>
          <%
             DBObject matchFields = new BasicDBObject( "retweet",new BasicDBObject( "$eq", "Verdadero") );             
             //System.out.println(matchFields.toString());            

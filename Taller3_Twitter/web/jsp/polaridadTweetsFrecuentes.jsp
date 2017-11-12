@@ -59,8 +59,8 @@
                                 cnt++;
                                 String retorno = "";
                                 TextClassifier tc = new TextClassifier();
-                                tc.loadModel("F:\\Andes\\Entrenamiento\\Tweets.model");                                  
-                                //tc.loadModel("D:\\01_ESTUDIOS\\MAESTRIA\\1_BIG_DATA\\TALLERES\\T3\\01_Enunciado_Entregables\\Prueba.model");  //Pablo
+                                //tc.loadModel("F:\\Andes\\Entrenamiento\\Tweets.model");                                  
+                                tc.loadModel("D:\\01_ESTUDIOS\\MAESTRIA\\1_BIG_DATA\\TALLERES\\T3\\01_Enunciado_Entregables\\Tweet.model");  //Pablo
                                 //tc.loadModel("/home/estudiante/Prueba.model"); //Cluster
                                 retorno = tc.classify(str.get("account").toString(), str.get("text").toString(), str.get("retweet").toString(), Integer.parseInt(str.get("countSeguidores").toString()), Integer.parseInt(str.get("countFavoritos").toString()), str.get("location").toString());                                
                                 //retorno = "d";
