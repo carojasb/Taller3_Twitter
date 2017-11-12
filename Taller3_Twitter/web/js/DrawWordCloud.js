@@ -6,7 +6,7 @@ function DrawWordCloud(frequency_list) {
             //.range(["#ddd", "#ccc", "#bbb", "#aaa", "#999", "#888", "#777", "#666", "#555", "#444", "#333", "#222"]);
             .range(["#CCCC00", "#CC6600", "#CC0000", "#66CC00", "#00CC66", "#0066CC", "#00CC00", "#00CCCC", "#0000CC", "#CC00CC", "#6600CC", "#000000"]);
 
-    d3.layout.cloud().size([800, 300])
+    d3.layout.cloud().size([800, 700])
             .words(frequency_list)
             .rotate(0)
             .fontSize(function(d) { return d.size; })
@@ -15,13 +15,13 @@ function DrawWordCloud(frequency_list) {
 
     function draw(words) {
         d3.select("body").append("svg")
-                .attr("width", 1600)
-                .attr("height", 400)
+                .attr("width", 800)
+                .attr("height", 700)
                 .attr("class", "wordcloud")
                 .append("g")
                 // without the transform, words words would get cutoff to the left and top, they would
                 // appear outside of the SVG area
-                .attr("transform", "translate(600,200)")
+                .attr("transform", "translate(800,700)")
                 .selectAll("text")
                 .data(words)
                 .enter().append("text")

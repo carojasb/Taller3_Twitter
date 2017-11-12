@@ -38,8 +38,8 @@
             DB db = mg.getDB("Grupo05");
             DBCollection collection = db.getCollection("grupo05_tweet");
             BasicDBObject whereQuery = new BasicDBObject();
-            whereQuery.put("hashtag", hash);            
-            DBCursor cursor = collection.find(whereQuery);                   
+            whereQuery.put("hashtag", hash);
+            DBCursor cursor = collection.find(whereQuery);
             int cnt=0, muynegativo=0, negativo=0, neutro=0, positivo=0, muypositivo=0;
             
             %>             
@@ -50,7 +50,7 @@
                     <th><b>ID</b></th>
                     <th><b>TWEET</b></th>
                     <th><b>CLASIFICACIÓN</b></th>
-                </tr><%            
+                </tr><%
                     while(cursor.hasNext()) {                
                         DBObject str = cursor.next();%>
                         <tr>

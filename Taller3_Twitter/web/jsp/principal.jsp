@@ -4,7 +4,13 @@
     Author     : Kmilo
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"
+        import="com.mongodb.*"
+        import="java.net.UnknownHostException"
+        import="com.sun.org.apache.bcel.internal.generic.NEW"        
+        %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -57,6 +63,46 @@
                      <input type ="text" name="Candidato_Elegido" value="German_Vargas" hidden="true"/>
                 </p>
             </fieldset>
+        </form>
+        
+        <br><br>
+        
+        <form name="form_apoyo" action="apoyoCuenta.jsp" align="center">
+            <fieldset style="background-color:darkgrey;"><br>
+                <p class="BtnConsultarApoyo" align="center">             
+                    <%
+                        //Pruebas Locales
+                        Mongo mg = new Mongo("localhost",27017);
+
+                        //Pruebas en Cluster
+                        //Mongo mg = new Mongo("172.24.99.98");
+
+                        int cnt=0;
+                        String p;
+                        DB db = mg.getDB("Grupo05");
+                        DBCollection collection = db.getCollection("grupo05_tweet");
+                        BasicDBObject doc = new BasicDBObject();                        
+                        DBCursor c = collection.find();                        
+                        DBCursor cursor = c.sort(new BasicDBObject("account", -1));
+                        
+                        String opcion = "";
+                        String validar_cuenta = "cuenta_inicial";
+                       
+                        for (DBObject cu : cursor){
+                            if (!cu.get("account").toString().contains(validar_cuenta)){                                
+                                opcion = opcion + "<option value=\""+cu.get("account").toString()+"\">"+cu.get("name").toString()+"<//option>";                                
+                                validar_cuenta = cu.get("account").toString();
+                            }
+                        }
+                        
+                    %>
+                    <select name="Cuenta_elegida" id="Cuenta_elegida">
+                        <%=opcion%>
+                    </select>
+                    <br><br>
+                    <input type="submit" value="Nivel de apoyo a las cuentas" name="btn_apoyoCuenta" align="center"/>
+                </p>
+                </fieldset>
         </form>
         
         <BR><BR><BR>

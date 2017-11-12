@@ -63,10 +63,10 @@
             System.out.println("Cuenta a consultar seguidores: " + CuentaConsultar);
             
             //Pruebas Locales
-            //Mongo mg = new Mongo("localhost",27017);
+            Mongo mg = new Mongo("localhost",27017);
             
             //Pruebas en cluster
-            Mongo mg = new Mongo("172.24.99.98");
+            //Mongo mg = new Mongo("172.24.99.98");
             
             DB db = mg.getDB("Grupo05");
             DBCollection collection = db.getCollection("grupo05_tweet");

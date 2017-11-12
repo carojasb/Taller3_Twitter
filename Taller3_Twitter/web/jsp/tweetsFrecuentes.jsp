@@ -73,11 +73,11 @@
                         cnt++;                        
                         
                         if (cnt < Integer.parseInt(cantidad)){
-                            vari = vari + "{\"text\":\"#"+hashtag+"\",\"size\":"+(times+incremento)+"},";
+                            vari = vari + "{\"text\":\"#"+hashtag+"\",\"size\":"+(times/5)+"},";
                             opcion = opcion + "<option value=\""+hashtag+"\">"+"#"+hashtag+"<//option>";
                             incremento = incremento - disminuir;
                         }else if (cnt == Integer.parseInt(cantidad)){
-                            vari = vari + "{\"text\":\"#"+hashtag+"\",\"size\":"+(times+incremento)+"}";
+                            vari = vari + "{\"text\":\"#"+hashtag+"\",\"size\":"+(times/5)+"}";
                             opcion = opcion + "<option value=\""+hashtag+"\">"+"#"+hashtag+"<//option>";
                             incremento = incremento - disminuir;
                         }
