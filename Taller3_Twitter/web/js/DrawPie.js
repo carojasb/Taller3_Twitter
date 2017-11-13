@@ -64,7 +64,9 @@ arcs.append("svg:text").attr("transform", function(d){
 			d.innerRadius = 0;
 			d.outerRadius = r;
     return "translate(" + arc.centroid(d) + ")";}).attr("text-anchor", "middle").text( function(d, i) {
-    return Math.round(data[i].value)+"%";}
+    if(Math.round(data[i].value)>0){
+        return Math.round(data[i].value)+"%";}
+    }
 		
             );
     
