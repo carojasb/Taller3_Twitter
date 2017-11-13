@@ -30,24 +30,27 @@ var arc = d3.svg.arc().outerRadius(r);
 
 // select paths, use arc generator to draw
 var arcs = vis.selectAll("g.slice").data(pie).enter().append("svg:g").attr("class", "slice");
+
+var vis2 = d3.select('#chart').append("svg:svg").attr("width", 30).attr("height", 400).append("svg:g");
+
 arcs.append("svg:path")
     .attr("fill", function(d, i){
         console.log(d);
         if(d.data.label === "Muy Negativo" ){
             console.log(d.data.label);
-            return "red";
+            return "#DF0101";
         }else if (d.data.label === "Negativo" ) {
              console.log(d.data.label);
-            return "orange";
+            return "#F5A9A9";
         }else if (d.data.label === "Neutro" ) {
              console.log(d.data.label);
-            return "blue";
+            return "#A9F5BC";
         }else if (d.data.label === "Positivo" ) {
              console.log(d.data.label);
-            return "yellow";
+            return "#00FF40";
         }else if (d.data.label === "Muy Positivo" ) {
              console.log(d.data.label);
-            return "green";
+            return "#0B6121";
         }
     })
     .attr("d", function (d) {
@@ -61,6 +64,11 @@ arcs.append("svg:text").attr("transform", function(d){
 			d.innerRadius = 0;
 			d.outerRadius = r;
     return "translate(" + arc.centroid(d) + ")";}).attr("text-anchor", "middle").text( function(d, i) {
-    return data[i].label;}
-		);
+    return Math.round(data[i].value)+"%";}
+		
+            );
+    
+    /**/
+   
     }
+    

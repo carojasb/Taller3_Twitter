@@ -23,6 +23,7 @@
         <script src="../js/DrawPie.js"></script>
     </head>
     <body>
+            
         
         <BR><BR><BR>
                 
@@ -104,7 +105,7 @@
                 String pnegativo_doc = ", {" + "\"" + "label" + "\"" + " : " + "\"" + "Negativo" + "\"" + " , " + "\"" + "value" + "\""+ " : "+ pnegativo + "}";
                 String neutro_doc = ", {" + "\"" + "label" + "\"" + " : " + "\"" + "Neutro" + "\"" + " , " + "\"" + "value" + "\""+ " : "+ pneutro + "}";
                 String ppositivo_doc = ", {" + "\"" + "label"  + "\"" + " : " + "\"" + "Positivo" + "\"" + " , " + "\"" + "value" + "\""+ " : "+ ppositivo + "}";
-                String pmuypositivo_doc = ", {" + "\"" +"label" + "\"" + " : " + "\"" + "Muy Positivo " + "\"" + " , " + "\"" + "value" + "\""+ " : "+ pmuypositivo + "}";
+                String pmuypositivo_doc = ", {" + "\"" +"label" + "\"" + " : " + "\"" + "Muy Positivo" + "\"" + " , " + "\"" + "value" + "\""+ " : "+ pmuypositivo + "}";
                 
                 /*String doc_porcentajes = "{" + "\"" + "TOTAL_TWEETS" + "\"" + " : " + "{" + "\"" + "Muy Negativo" + "\"" + " : " + pmuynegativo;
                 String pnegativo_doc = " , " + "\"" + "Negativo" + "\"" + " : "+ pnegativo;
@@ -131,27 +132,27 @@
                         <th><b>PORCENTAJE (%)</b></th>
                     </tr>
                     <tr>
-                        <td>Muy Negativo</td>
+                        <td bgcolor="#DF0101">Muy Negativo</td>
                         <td><%=muynegativo%></td>
                         <td><%=Math.rint(pmuynegativo*100)/100%>%</td>
                     </tr>
                     <tr>
-                        <td>Negativo</td>
+                        <td bgcolor="#F5A9A9">Negativo</td>
                         <td><%=negativo%></td>
                         <td><%=Math.rint(pnegativo*100)/100%>%</td>
                     </tr>
                     <tr>
-                        <td>Neutro</td>
+                        <td bgcolor="#A9F5BC">Neutro</td>
                         <td><%=neutro%>
                         <td><%=Math.rint(pneutro*100)/100%>%</td>
                     </tr>
                     <tr>
-                        <td>Positivo</td>
+                        <td bgcolor="#00FF40">Positivo</td>
                         <td><%=positivo%>
                         <td><%=Math.rint(ppositivo*100)/100%>%</td>
                     </tr>
                     <tr>
-                        <td>Muy Positivo</td>
+                        <td bgcolor="#0B6121">Muy Positivo</td>
                         <td><%=muypositivo%>
                         <td><%=Math.rint(pmuypositivo*100)/100%>%</td>
                     </tr>
@@ -166,13 +167,14 @@
          <br><br>      
          
         <!-- Division para el piechart  --> 
-        <p id="chart" align="center"></p>
+        <p id="chart" align="center">
             <script>
                 var doc_json_porcentajes = <%= doc_porcentajes%>  
                 drawpie(doc_json_porcentajes);
             </script>         
           <!-- Division para el piechart  --> 
-          
+        </p>
+        
         <br><br>     
         
         <p class="linkVolver" align="center">                
