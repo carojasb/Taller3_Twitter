@@ -42,6 +42,7 @@
           <form name="Form_Button" action="HistoricoSeguidores.jsp" onsubmit="return consultar_seguidores()" align="center">     
              <select name="Candidato_Elegido" id="candidatos">
                 <option value="AlvaroUribeVel">Álvaro Uribe Vélez</option>
+                <option value="CeDemocratico">Centro Democratico</option>
                 <option value="German_Vargas">German Vargas Lleras</option> 
                 <option value="IvanDuque">IvanDuque</option>
                 <option value="mluciaramirez">Marta Lucía Ramírez</option> 
