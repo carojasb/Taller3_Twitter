@@ -82,8 +82,8 @@
                         String p;
                         DB db = mg.getDB("Grupo05");
                         DBCollection collection = db.getCollection("grupo05_tweet");
-                        BasicDBObject doc = new BasicDBObject();                        
-                        DBCursor c = collection.find();                        
+                        BasicDBObject doc = new BasicDBObject();
+                        DBCursor c = collection.find();
                         DBCursor cursor = c.sort(new BasicDBObject("account", -1));
                         
                         String opcion = "";

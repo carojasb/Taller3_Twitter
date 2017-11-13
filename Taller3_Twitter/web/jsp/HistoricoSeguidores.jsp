@@ -37,8 +37,8 @@
             La siguiente grafica nos permite ver el cambio del numero de seguidores de una cuenta especifica en diferentes instantes de tiempo.<br><br>
             El eje <b><i>"X"</i></b> indica la fecha (dia, mes, año, hora, minuto, segundo) en la cual fue tomada la muestra de los datos y el eje <b><i>"Y"</i></b> muestra el numero seguidores de esta cuenta.
         </p>
-        <br>
-        <div class="Line_chart">
+        <br><br>
+        <div class="Line_chart" align="center">
           <form name="Form_Button" action="HistoricoSeguidores.jsp" onsubmit="return consultar_seguidores()" align="center">     
              <select name="Candidato_Elegido" id="candidatos">
                 <option value="AlvaroUribeVel">Álvaro Uribe Vélez</option>
@@ -93,7 +93,7 @@
                 LineChartSeguidores(documento_json,country);
             </script>            
         </div>  
-        <br><br><br><br><br><br>
+        <br><br><br><br><br><br><br>
         <h1 style="color: black" align="center"><b>Numero de Tweets con Retweet por cuenta</b></h1><br><br>
          <p align="center">
             A continuacion se grafica el numero de tweets que han sido retweeteados por cada cuenta.<br><br>

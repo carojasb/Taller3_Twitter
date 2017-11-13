@@ -28,7 +28,7 @@
         <BR><BR><BR>
                 
         <%String cuenta = new String(request.getParameter("Cuenta_elegida").getBytes("ISO-8859-1"),"UTF-8"); %>
-        <h1 style="color: black" align="center"><b>Nivel de apoyo a la cuenta "<%=cuenta%>"</b></h1><br><br>
+        <h1 style="color: black" align="center"><b>Nivel de apoyo a la cuenta "<%=cuenta%>"</b></h1><br>
         <form name="Form_Button">
             <%
                 //Pruebas Locales
@@ -51,9 +51,9 @@
                 for(DBObject str : cursor){
                     String retorno = "";
                     TextClassifier tc = new TextClassifier();
-                    //tc.loadModel("F:\\Andes\\Entrenamiento\\Tweets.model");
-                    tc.loadModel("D:\\01_ESTUDIOS\\MAESTRIA\\1_BIG_DATA\\TALLERES\\T3\\01_Enunciado_Entregables\\Tweet.model");  //Pablo
-                    //tc.loadModel("/home/estudiante/Prueba.model"); //Cluster
+                    //tc.loadModel("F:\\Andes\\Entrenamiento\\Tweets_final.model");
+                    //tc.loadModel("D:\\01_ESTUDIOS\\MAESTRIA\\1_BIG_DATA\\TALLERES\\T3\\01_Enunciado_Entregables\\Tweet.model");  //Pablo
+                    tc.loadModel("/home/estudiante/Tweets_final.model"); //Cluster
                     retorno = tc.classify(str.get("account").toString(), str.get("text").toString(), str.get("retweet").toString(), Integer.parseInt(str.get("countSeguidores").toString()), Integer.parseInt(str.get("countFavoritos").toString()), str.get("location").toString());
                     //retorno = "d";
                     if(retorno.equals("Muy Negativo")){
@@ -132,27 +132,27 @@
                         <th><b>PORCENTAJE (%)</b></th>
                     </tr>
                     <tr>
-                        <td bgcolor="#DF0101">Muy Negativo</td>
+                        <td bgcolor="RED">Muy Negativo</td>
                         <td><%=muynegativo%></td>
                         <td><%=Math.rint(pmuynegativo*100)/100%>%</td>
                     </tr>
                     <tr>
-                        <td bgcolor="#F5A9A9">Negativo</td>
+                        <td bgcolor="DARKORANGE">Negativo</td>
                         <td><%=negativo%></td>
                         <td><%=Math.rint(pnegativo*100)/100%>%</td>
                     </tr>
                     <tr>
-                        <td bgcolor="#A9F5BC">Neutro</td>
+                        <td bgcolor="YELLOW">Neutro</td>
                         <td><%=neutro%>
                         <td><%=Math.rint(pneutro*100)/100%>%</td>
                     </tr>
                     <tr>
-                        <td bgcolor="#00FF40">Positivo</td>
+                        <td bgcolor="LIMEGREEN">Positivo</td>
                         <td><%=positivo%>
                         <td><%=Math.rint(ppositivo*100)/100%>%</td>
                     </tr>
                     <tr>
-                        <td bgcolor="#0B6121">Muy Positivo</td>
+                        <td bgcolor="GREEN">Muy Positivo</td>
                         <td><%=muypositivo%>
                         <td><%=Math.rint(pmuypositivo*100)/100%>%</td>
                     </tr>

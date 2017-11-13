@@ -38,19 +38,19 @@ arcs.append("svg:path")
         console.log(d);
         if(d.data.label === "Muy Negativo" ){
             console.log(d.data.label);
-            return "#DF0101";
+            return "RED";
         }else if (d.data.label === "Negativo" ) {
              console.log(d.data.label);
-            return "#F5A9A9";
+            return "DARKORANGE";
         }else if (d.data.label === "Neutro" ) {
              console.log(d.data.label);
-            return "#A9F5BC";
+            return "YELLOW";
         }else if (d.data.label === "Positivo" ) {
              console.log(d.data.label);
-            return "#00FF40";
+            return "LIMEGREEN";
         }else if (d.data.label === "Muy Positivo" ) {
              console.log(d.data.label);
-            return "#0B6121";
+            return "GREEN";
         }
     })
     .attr("d", function (d) {
