@@ -34,10 +34,10 @@
         
         <%  
             //Pruebas Locales
-            Mongo mg = new Mongo("localhost",27017);
+            //Mongo mg = new Mongo("localhost",27017);
             
             //Pruebas en Cluster
-            //Mongo mg = new Mongo("172.24.99.98");
+            Mongo mg = new Mongo("172.24.99.98");
             
             int cnt=0;
             String p;
@@ -73,11 +73,11 @@
                         cnt++;                        
                         
                         if (cnt < Integer.parseInt(cantidad)){
-                            vari = vari + "{\"text\":\"#"+hashtag+"\",\"size\":"+(times/5)+"},";
+                            vari = vari + "{\"text\":\"#"+hashtag+"\",\"size\":"+(times/8)+"},";
                             opcion = opcion + "<option value=\""+hashtag+"\">"+"#"+hashtag+"<//option>";
                             incremento = incremento - disminuir;
                         }else if (cnt == Integer.parseInt(cantidad)){
-                            vari = vari + "{\"text\":\"#"+hashtag+"\",\"size\":"+(times/5)+"}";
+                            vari = vari + "{\"text\":\"#"+hashtag+"\",\"size\":"+(times/8)+"}";
                             opcion = opcion + "<option value=\""+hashtag+"\">"+"#"+hashtag+"<//option>";
                             incremento = incremento - disminuir;
                         }

@@ -32,10 +32,10 @@
         <form name="Form_Button">
             <%
                 //Pruebas Locales
-                Mongo mg = new Mongo("localhost",27017);
+                //Mongo mg = new Mongo("localhost",27017);
 
                 //Pruebas en Cluster
-                //Mongo mg = new Mongo("172.24.99.98");
+                Mongo mg = new Mongo("172.24.99.98");
 
                 int cnt=0, muynegativo=0, negativo=0, neutro=0, positivo=0, muypositivo=0;
                 String p;
