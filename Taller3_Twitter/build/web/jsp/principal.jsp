@@ -59,7 +59,7 @@
             <fieldset style="background-color:darkgrey;"><br>
                 <p class="BtntweetsFrecuentes" align="center">
                     <label style="color: black; font-size:18px"> Consultar los </label>
-                    <input id="cantidad" type="text" name="hashtags" placeholder="Ej: 10" size="2" onChange="validarSiNumero(this.value);"/>
+                    <input id="cantidad" type="text" name="hashtags" placeholder="Ej: 10" size="3" onChange="validarSiNumero(this.value);"/>
                     <label style="color: black; font-size:18px"> hashtags más frecuentes </label><BR><BR>
                     <input type="submit" value="Buscar" name="btn_tweetsFrecuentes" align="center"/>
                 </p>
@@ -127,7 +127,7 @@
                 <p class="BtnHistorico" align="center">
                     <label style="color: black; font-size:18px">Modelo anotado al 100% VS Modelo anotado al 20%</label><br><br>
                     <label style="color: black; font-size:18px">Consultar </label>
-                    <input id="cant_registros" type="text" name="cant_registros" placeholder="Ej: 100" size="3" onChange="validarSiNumero(this.value);"/>
+                    <input id="cant_registros" type="text" name="cant_registros" placeholder="Ej: 100" size="4" onChange="validarSiNumero(this.value);"/>
                     <label style="color: black; font-size:18px"> registros</label><br><br>
                     <input type="submit" name="Comparar_modelos" value="Buscar" align="center" />                    
                 </p>
