@@ -35,10 +35,8 @@
             String p;
             DB db = mg.getDB("Grupo05");
             DBCollection collection = db.getCollection("grupo05_eng");            
-            BasicDBObject whereQuery = new BasicDBObject();
-            DBObject sortFields = new BasicDBObject("tweet_id", -1);
-            //DBObject sort = new BasicDBObject("$sort", sortFields );            
-            DBCursor cursor = collection.find().sort(sortFields).limit(Integer.parseInt(cantidad));
+            BasicDBObject whereQuery = new BasicDBObject();            
+            DBCursor cursor = collection.find().limit(Integer.parseInt(cantidad));
             
             for(DBObject str : cursor){
                 //Anotado al 100%
