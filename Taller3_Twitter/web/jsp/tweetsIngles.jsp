@@ -25,10 +25,10 @@
         
         <%
             //Pruebas Locales
-            Mongo mg = new Mongo("localhost",27017);
+            //Mongo mg = new Mongo("localhost",27017);
 
             //Pruebas en Cluster
-            //Mongo mg = new Mongo("172.24.99.98");
+            Mongo mg = new Mongo("172.24.99.98");
 
             int cnt=0, negative_anotado=0, positive_anotado=0, mixed_anotado=0, other_anotado=0, 
                     negative_entrenado=0, positive_entrenado=0, mixed_entrenado=0, other_entrenado=0;
@@ -42,7 +42,8 @@
                 //Anotado al 100%
                 String retornoAnotado = "";
                 TextClassifier tcAnotado = new TextClassifier();
-                tcAnotado.loadModel("F:\\Andes\\Entrenamiento\\Ingles\\Ingles_anotado.model");
+                //tcAnotado.loadModel("F:\\Andes\\Entrenamiento\\Ingles\\Ingles_anotado.model");
+                tcAnotado.loadModel("/home/estudiante/Ingles_anotado.model"); //Cluster
                 retornoAnotado = tcAnotado.classifyIngles(Integer.parseInt(str.get("tweet_id").toString()), str.get("fec_pub").toString(), str.get("content").toString(), str.get("authorname").toString(),
                         str.get("author_nickname").toString(), str.get("rating1").toString(), str.get("rating2").toString(), str.get("rating3").toString(), str.get("rating4").toString());
                 
@@ -59,7 +60,8 @@
                 //Entrenado al 20%
                 String retornoEntrenado = "";
                 TextClassifier tcEntrenado = new TextClassifier();
-                tcEntrenado.loadModel("F:\\Andes\\Entrenamiento\\Ingles\\Ingles_entrenado.model");
+                //tcEntrenado.loadModel("F:\\Andes\\Entrenamiento\\Ingles\\Ingles_entrenado.model");
+                tcEntrenado.loadModel("/home/estudiante/Ingles_entrenado.model"); //Cluster
                 retornoEntrenado = tcEntrenado.classifyIngles(Integer.parseInt(str.get("tweet_id").toString()), str.get("fec_pub").toString(), str.get("content").toString(), str.get("authorname").toString(),
                         str.get("author_nickname").toString(), str.get("rating1").toString(), str.get("rating2").toString(), str.get("rating3").toString(), str.get("rating4").toString());
                 

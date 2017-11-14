@@ -86,10 +86,10 @@
                 <p class="BtnConsultarApoyo" align="center">             
                     <% 
                         //Pruebas Locales
-                        Mongo mg = new Mongo("localhost",27017);
+                        //Mongo mg = new Mongo("localhost",27017);
 
                         //Pruebas en Cluster
-                        //Mongo mg = new Mongo("172.24.99.98");
+                        Mongo mg = new Mongo("172.24.99.98");
 
                         int cnt=0;
                         String p;
