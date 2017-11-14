@@ -79,4 +79,27 @@ public class TextClassifier {
         //return "" + i.stringValue(i.classAttribute());
     }
     
+    public String classifyIngles(int tweet_id, String fecha, String content, String author_name, String author_nickname, 
+            String rating_1, String rating_2, String rating_3, String rating_4) throws Exception{
+        
+        Instance i = InstancesManager.createInstanceFromTextIngles(tweet_id, fecha, content, author_name, author_nickname, 
+            rating_1, rating_2, rating_3, rating_4, classifier.getHeader(), false);
+        
+        double pred = classifier.clasificar(i);
+        String prediccion = "";
+                        
+        if (pred == 0){
+            prediccion = "negative";
+        }else if (pred == 1){
+            prediccion = "positive";
+        }else if (pred == 2){
+            prediccion = "mixed";
+        }else if (pred == 3){
+            prediccion = "other";
+        }
+        
+        return prediccion;
+        //return "" + i.stringValue(i.classAttribute());
+    }
+    
 }

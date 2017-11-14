@@ -16,7 +16,7 @@
     <!--<body style="background-color: darkslategray">-->
         <BR><BR><BR>
         <form name="form_index" action="Taller2/../jsp/principal.jsp">                        
-            <h1 style="color: black" align="center">GRUPO 05</h1><BR><BR>
+            <h1 style="color: black" align="center"><b>GRUPO 05</b></h1><BR><BR>
             <h2 style="color: black" align="center">Camilo Andres Rojas Bulla</h2>
             <h2 style="color: black" align="center">Pablo Andres Boada</h2><BR><BR>
             <p class="BtnIniciar" align="center">

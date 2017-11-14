@@ -18,6 +18,17 @@
         <title>Principal</title>
         <link href="../Resources/css/screen.css" rel="stylesheet" type="text/css"/>
         <script type="text/javascript">
+            function validarCantidadVS() {
+                //obteniendo el valor que se puso en campo text del formulario
+                miCampoTexto = document.getElementById("cant_registros").value;
+                //la condición
+                if (miCampoTexto.length == 0) {
+                    alert("Debe colocar la cantidad de registros");
+                    return false;
+                }
+                return true;
+            }
+            
             function validarCantidad() {
                 //obteniendo el valor que se puso en campo text del formulario
                 miCampoTexto = document.getElementById("cantidad").value;
@@ -28,6 +39,8 @@
                 }
                 return true;
             }
+            
+            
             
             function validarSiNumero(numero){
                 if (!/^([0-9])*$/.test(numero)) 
@@ -71,12 +84,12 @@
         <form name="form_apoyo" action="apoyoCuenta.jsp" align="center">
             <fieldset style="background-color:darkgrey;"><br>
                 <p class="BtnConsultarApoyo" align="center">             
-                    <%
+                    <% 
                         //Pruebas Locales
-                        //Mongo mg = new Mongo("localhost",27017);
+                        Mongo mg = new Mongo("localhost",27017);
 
                         //Pruebas en Cluster
-                        Mongo mg = new Mongo("172.24.99.98");
+                        //Mongo mg = new Mongo("172.24.99.98");
 
                         int cnt=0;
                         String p;
@@ -105,6 +118,20 @@
                     <input type="submit" value="Buscar" name="btn_apoyoCuenta" align="center"/>
                 </p>
                 </fieldset>
+        </form>
+                    
+        <br><br>
+
+        <form name="form_ingles" action="tweetsIngles.jsp" onsubmit="return validarCantidadVS()" align="center">
+            <fieldset style="background-color:darkgrey;"><br>
+                <p class="BtnHistorico" align="center">
+                    <label style="color: black; font-size:18px">Modelo anotado al 100% VS Modelo anotado al 20%</label><br><br>
+                    <label style="color: black; font-size:18px">Consultar </label>
+                    <input id="cant_registros" type="text" name="cant_registros" placeholder="Ej: 100" size="2" onChange="validarSiNumero(this.value);"/>
+                    <label style="color: black; font-size:18px"> registros</label><br><br>
+                    <input type="submit" name="Comparar_modelos" value="Buscar" align="center" />                    
+                </p>
+            </fieldset>
         </form>
         
         <BR><BR><BR>

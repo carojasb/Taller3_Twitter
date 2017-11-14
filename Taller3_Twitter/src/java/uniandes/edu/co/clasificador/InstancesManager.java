@@ -83,4 +83,24 @@ public class InstancesManager {
                         
             return i;		          
 	}
+        
+        public static Instance createInstanceFromTextIngles(int tweet_id, String fecha, String content, String author_name, String author_nickname, 
+            String rating_1, String rating_2, String rating_3, String rating_4, Instances header, boolean useStemmer) throws Exception {
+		
+            Instance i = new SparseInstance(5);
+            i.setDataset(header);                        
+            i.setValue(header.attribute(0), tweet_id);
+            i.setValue(header.attribute(1), fecha);
+            i.setValue(header.attribute(2), content);
+            i.setValue(header.attribute(3), author_name);
+            i.setValue(header.attribute(4), author_nickname);
+            i.setValue(header.attribute(5), rating_1);
+            i.setValue(header.attribute(6), rating_2);
+            i.setValue(header.attribute(7), rating_3);
+            i.setValue(header.attribute(8), rating_4);
+
+            System.out.println("esto es i = " + i);
+                        
+            return i;		          
+	}
 }
